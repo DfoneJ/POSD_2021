@@ -25,7 +25,7 @@ class Circle : public Shape {
             return 2 * M_PI * _radius;
         }
 
-        std::string info() const {
+        std::string info() const override{
             char information[63];
             sprintf(information, "Circle (%.2lf)", (round(_radius*100.00))/100.00);
             return information;
