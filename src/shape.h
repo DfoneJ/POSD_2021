@@ -1,3 +1,5 @@
+#ifndef SHAPE_H
+#define SHAPE_H
 // you don't have to modify this class
 class Shape {
 public:
@@ -5,3 +7,4 @@ public:
     virtual double perimeter() const = 0;
     virtual std::string info() const = 0;
 };
+#endif
