@@ -1,72 +1,77 @@
 # Pattern Oriented Software Design 2021 Fall Assignment
 
 ## Assignment List
-[Assignment 1:](Assignment1.md) Due 10/06
+- [Assignment 1:](Assignment1.md) Due 10/06
+- [Assignment 2:](Assignment2.md) Due 10/18
 
 ---
 
-## Assignment 1
-#### Deadline: 10/06 Wed 23:59.
+## Assignment 2
 
-The packages `src/` and `test/` in this repo are the template code of the 
-assignment.
-The template is just the skeleton.
-You should finish implementation by yourself.
+__Deadline__: 10/18 23:59.
 
-For this assignment, you'll implement `Shape` objects, practice to use TDD, and
-learn how to handle exception.
+The folders src/ and test/ in this repo contain the template code of the
+assignment, which is just the skeleton. You need to finish the implementation. 
 
-Please complete the given code to satisfy all the specs of the `Shape` problem 
-and the following conditions.
+For this assignment, you are asked to implement a simple markdown generator. In
+this system, there are three classes `Paragraph`, `ListItem` and `Text` which are all
+derived from abstract class `Article`.
 
-- abstract class `Shape`, which has immutable `area`, `perimeter` and `info`.
-- class `Rectangle`, `Triangle` and `Circle`, where all of them are `Shape`, 
-that is, they should implement all methods of `Shape`.
-- class `Rectangle`, which is created by positive double length and width.
-- class `Triangle`, which is created by two non-parallel two dimensional 
-vectors.
-- class `Circle`, which is created by positive double radius.
-- the format of `info` should contain **type** and **information** of a `Shape` 
-object. The example is below.
-  ```
-  // case `Rectangle with length 3.14, width 4`: 
-  Rectangle (3.14 4.00)
-  
-  // case `Triangle with vector1 (3, 12.433) and vector2 (17.56789, -4)`: 
-  Triangle ([3.00,12.43] [17.57,-4.00])
+Please add to the skeleton code so that it meets the specifications below.
+- The abstract class `Article` has three methods `getText()`, `getLevel()` and 
+  `add()`.
+- The classes `Text`, `Paragraph` and `ListItem` that are derived from
+  abstract class `Article`. 
+- For class `Text`, which has the string data member `text` and has a constant level of 0, calling
+  `getText()` returns `text` and calling `add()` throws an exception.
+- For class `ListItem`, the string data member `text` and has a constant level of 0,
+  calling `getText()` returns `text` prefixed with '- ' and calling `add()` throws an exception.
+- For class `Paragraph`, which the string data member `text` and non-constant level greather than
+  1 but smaller or equal than 6, Paragraph can aggregate 0 to n `Article` objects, and calling `getText()` does the following: first, a
+  numbers of '#' equal to level is prefixed to `text`; and all children's 
+  `getText()` are called with the result postfixed with '\n'. Note that the last line should not have a '\n' at the end.
+- `Paragraph` of level _m_ can be added to a `Paragraph` of level _n_ only if _m_ is greater than _n_; otherwise, an exception is thrown.
 
-  // case `Circle with radius 1.1`:
-  Circle (1.10)
-  ```
----
-- class `TwoDimensionalVector`, which has immutable double `x`, `y`, `length` 
-and `info`, and it can `subtract` and calculate `dot product` and 
-`cross product` with another TwoDimensionalVector. The start point of each 
-vector is (0, 0), and the end point of each vector is (`x`, `y`). The example of 
-`info` is below.
-  ```
-  // case `(3, 12.433)`:
-  [3.00,12.43]
-  ```
-- file `makefile`, which generates binary file named `ut_all` under the package 
-`bin/` for all test files.
+#### Example:
+
+``` c++
+  Paragraph p(1, "title");
+  p.add(new ListItem("list1"));
+  p.add(new ListItem("list2"));
+  p.add(new Text("text"));
+  Paragraph* p2 = new Paragraph(2, "title2");
+  p2->add(new ListItem("list3"));
+  p2->add(new ListItem("list4"));
+  p2->add(new Text("sub text"));
+  p.add(p2);
+```
+
+result of `p.getText()`(don't print '\n', it just remind you there has a \n)
+```
+# title\n
+- list1\n
+- list2\n
+text\n
+## title2\n
+- list3\n
+- list4\n
+sub text
+```
 
 #### Notes:
-- If your code fails to compile on jenkins server, you'll get **NO POINT** for
+- If your code fails to compile on the Jenkins server, you'll get **NO POINT** for
 the assignment.
 - Your program should be able to handle unexpected input data, that is, you
 should do error handling if necessary.
-- You should make your unit test fail if the program that should throw error
-runs without any problem.
+- You should make your unit test fail if the program that should throw an exception
+runs without throwing one.
 - When writing unit tests, you should take as many situations as possible into
 consideration.
-- Discussion is encouraged but code must be your own.
-- If the type of returned value is `double`, you should assert the value to 
-accuracy `%.3f`.
-- You should round off `double` value to `%.2f` when number is showed in `info`.
+- Discussion is encouraged but the pushed code must be your own.
+- Any submission after deadline will not be graded.
 
 #### Hints:
-- You can use `M_PI` in \<cmath> for calculation of `π`.
+- You can use `typeid` to check type.
 
 ### Grading Rubrics
 1. Unit tests written by yourself: 50%. (You have to write tests covering all 
@@ -74,33 +79,26 @@ conditions, and make them pass.)
 2. Unit tests written by TA: 50%.
 
 ### File Structure
-```
-.
-├── bin
-│   └── ut_all
-├── src
-│   ├── circle.h
-│   ├── rectangle.h
-│   ├── shape.h
-│   ├── triangle.h
-│   └── two_dimensional_vector.h
-├── test
-│   ├── ut_circle.h
-│   ├── ut_main.cpp
-│   ├── ut_rectangle.h
-│   ├── ut_triangle.h
-│   └── ut_two_dimensional_vector.h
-└── makefile
-```
 
+  ```bash
+    .
+    ├── makefile
+    ├── src
+    │   ├── article.h
+    │   ├── list_item.h
+    │   ├── paragraph.h
+    │   └── text.h
+    └── test
+        ├── ut_list_item.h
+        ├── ut_main.cpp
+        ├── ut_paragraph.h
+        └── ut_text.h
+  ```
 
 ## References
 - [C++.com](http://www.cplusplus.com/reference/)
 - [C++ Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
 - [Makefile Tutorial](https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial)
-- [Vector Introduction](https://mathinsight.org/cross_product_formula)
-- [Dot Product Formula](https://mathinsight.org/dot_product_formula_components)
-- [Cross Product Formula](https://mathinsight.org/cross_product_formula)
 
 ## Course Link
 Course Link: https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2021f
