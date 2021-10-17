@@ -34,9 +34,9 @@ TEST(CaseParagraph, GetLevel){
     ASSERT_EQ(1,p.getLevel());
 }
 
-TEST(CaseParagraph, GetText){
+TEST(CaseParagraph, GetOriginalText){
     Paragraph p(1,"title_1");
-    ASSERT_EQ(std::string("# title_1"),p.getText());
+    ASSERT_EQ(std::string("# title_1\n"),p.getText());
 }
 
 TEST(CaseParagraph, AddFail){

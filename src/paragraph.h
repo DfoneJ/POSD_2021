@@ -17,13 +17,17 @@ class Paragraph : public Article {
                 for(int i=1;i<=_level;i++)
                     _text = "#"+_text;
                 _text = _text+" "+text;
+                _original_text = _text;
             }
         }
 
         ~Paragraph() {}
 
         std::string getText() const override {
-            return _text+"";
+            if(_text == _original_text)
+                return _original_text+"\n";
+            else
+                return _text;
         }
 
         int getLevel() const override {
@@ -41,6 +45,7 @@ class Paragraph : public Article {
         }
     private:
         std::string _text="";
+        std::string _original_text="";
         int _level;
 
 

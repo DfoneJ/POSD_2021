@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Oct 17 18:49:19 2021
+# Make data base, printed on Sun Oct 17 19:59:22 2021
 
 # Variables
 
@@ -57,7 +57,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-73b98875-7acd-4a96-ac0e-25c0690bab92-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-473c26d0-2afe-4de6-b803-cbcca0d00168-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # environment
@@ -81,7 +81,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9704_ZTKELQOMTBUHYRJJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20268_VGDTAXAUGSDPHFVR
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -133,7 +133,8 @@ MAKE_COMMAND := make.exe
 # environment
 PROCESSOR_ARCHITEW6432 = AMD64
 # default
-.VARIABLES := 
+.VARI 
+ABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,8 +154,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
-SYSTEMROOT = C:\Win 
-dows
+SYSTEMROOT = C:\Windows
 # automatic
 +D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
 # automatic
@@ -190,7 +190,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 9704
+VSCODE_PID = 20268
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -206,14 +206,14 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
 # . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1634355945): 12 files, no impossibilities.
 # C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1634264206): 4 files, no impossibilities.
-# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mti 
+me 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1633488672): 128 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1634117783): 121 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1634117795): 171 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1634203203): 2843 files, no impossibilities.
-# C:\Program Files\PuTTY\ (key C:/Program Fil 
-es/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
+# C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
 # 3345 files, no impossibilities in 11 directories.
 
@@ -277,7 +277,8 @@ src/article.h:
 
 # Not a target:
 src/text.h:
-#  Implicit rule search has not been done.
+#  Im 
+plicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -295,8 +296,7 @@ TEST: test/ut_paragraph.h test/ut_list_item.h test/ut_text.h test/ut_main.cpp
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
-#  Mo 
-dification time never checked.
+#  Modification time never checked.
 #  File has not been updated.
 
 ut_main: test/ut_main.cpp
@@ -379,10 +379,10 @@ directories:
 # other used: total = 41809 B / count = 3273 / avg = 12 B
 # other free: total = 53 B / max = 14 B / min = 3 B / avg = 8 B
 
-# strcache performa 
-nce: lookups = 3393 / hit rate = 1%
+# strcache perfor 
+mance: lookups = 3393 / hit rate = 1%
 # hash-table stats:
 # Load=3336/8192=41%, Rehash=0, Collisions=1091/3393=32%
-# Finished Make data base on Sun Oct 17 18:49:19 2021
+# Finished Make data base on Sun Oct 17 19:59:22 2021
 
  
