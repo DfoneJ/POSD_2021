@@ -23,7 +23,7 @@ class Paragraph : public Article {
         ~Paragraph() {}
 
         std::string getText() const override {
-            return _text;
+            return _text+"";
         }
 
         int getLevel() const override {
@@ -31,8 +31,8 @@ class Paragraph : public Article {
         }
 
         void add(Article* content) override {
-            if(content->getLevel()!=0 and content->getLevel()<_level){
-                throw std::string("cannot add smaller level paragraph to greater level paragraph!");
+            if(content->getLevel()!=0 and content->getLevel()<=_level){
+                throw std::string("cannot add smaller or equal level paragraph!");
             }
             else{
                 _text = _text + "\n";

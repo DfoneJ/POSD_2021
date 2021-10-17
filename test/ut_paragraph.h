@@ -47,7 +47,7 @@ TEST(CaseParagraph, AddFail){
         FAIL();
     }
     catch(std::string e){
-        EXPECT_EQ(std::string("cannot add smaller level paragraph to greater level paragraph!"),e);
+        EXPECT_EQ(std::string("cannot add smaller or equal level paragraph!"),e);
     }
 }
 
