@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Oct 17 19:59:22 2021
+# Make data base, printed on Fri Oct 29 18:17:22 2021
 
 # Variables
 
@@ -32,8 +32,7 @@ HOMEDRIVE = C:
 # automatic
 ^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
 # makefile
-CUR 
-DIR := c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW
+CURDIR := c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW3
 # default
 SHELL := sh.exe
 # environment
@@ -42,8 +41,6 @@ WINDIR = C:\Windows
 VSCODE_NLS_CONFIG = {"locale":"zh-tw","availableLanguages":{},"_languagePackSupport":true}
 # environment
 ONEDRIVE = C:\Users\JB\OneDrive
-# environment
-CLIENTNAME = LAPTOP-3RV0QR2F
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile (from 'makefile', line 1)
@@ -57,9 +54,9 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-473c26d0-2afe-4de6-b803-cbcca0d00168-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7b4f7bd9-cd64-4f85-a46b-2f187a2d06ca-sock
 # environment
-VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
+VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW3
 # environment
 PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Users\JB\AppData\Local\Microsoft\WindowsApps;C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin
 # environment
@@ -81,7 +78,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20268_VGDTAXAUGSDPHFVR
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21304_WWHHNBJSOUBPPAFB
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -99,7 +96,7 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\JB\AppData\Roaming\Code\CachedData\c13f1abb110fc756f9b3a6f16670df9cd9d4cf63
+VSCODE_CODE_CACHE_PATH = C:\Users\JB\AppData\Roaming\Code\CachedData\6cba118ac49a1b88332f312a8f67186f7f3c1643
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -133,8 +130,7 @@ MAKE_COMMAND := make.exe
 # environment
 PROCESSOR_ARCHITEW6432 = AMD64
 # default
-.VARI 
-ABLES := 
+.VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
@@ -142,7 +138,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\ca6ab60109bf24a64d9a1b9abde688bf-1.61.1-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\ca6ab60109bf24a64d9a1b9abde688bf-1.61.2-main-sock
 # environment
 HOMEPATH = \Users\JB
 # environment
@@ -178,7 +174,7 @@ SUFFIXES :=
 # environment
 SYSTEMDRIVE = C:
 # environment
-SESSIONNAME = RDP-Tcp#17
+SESSIONNAME = Console
 # environment
 PROCESSOR_REVISION = 9e0d
 # default
@@ -190,11 +186,11 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 20268
+VSCODE_PID = 21304
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
-# Load=90/1024=9%, Rehash=0, Collisions=11/114=10%
+# Load=89/1024=9%, Rehash=0, Collisions=11/115=10%
 
 # Pattern-specific Variable Values
 
@@ -202,12 +198,11 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 
 # Directories
 
-# C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1634117880): 15 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1635408430): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1634355945): 12 files, no impossibilities.
-# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1634264206): 4 files, no impossibilities.
-# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mti 
-me 1632901888): 8 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW3, mtime 1635502547): 10 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1635146261): 4 files, no impossibilities.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1633488672): 128 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1634117783): 121 files, no impossibilities.
@@ -215,7 +210,7 @@ me 1632901888): 8 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1634203203): 2843 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
-# 3345 files, no impossibilities in 11 directories.
+# 3343 files, no impossibilities in 11 directories.
 
 # Implicit Rules
 
@@ -223,7 +218,19 @@ me 1632901888): 8 files, no impossibilities.
 
 # Files
 
-SRC: src/article.h src/list_item.h src/paragraph.h src/text.h
+# Not a target:
+test/ut_circle.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+SRC:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/two_dimensional_vector.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -243,7 +250,19 @@ all: directories ut_main
 #  File has not been updated.
 
 # Not a target:
+test/iterator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/iterator.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -253,42 +272,52 @@ test: all
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 18):
+#  recipe to execute (from 'makefile', line 26):
 	bin/ut_all
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-10-16 20:58:10
+#  Last modified 2021-10-29 12:54:20
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-test/ut_text.h:
+src/rectangle.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/article.h:
+test/ut_triangle.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/text.h:
-#  Im 
-plicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-test/ut_list_item.h:
+src/triangle.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-TEST: test/ut_paragraph.h test/ut_list_item.h test/ut_text.h test/ut_main.cpp
+# Not a target:
+src/circle.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+SHAPE: src/shape.h src/rectangle.h src/circle.h src/triangle.h src/two_dimensional_vector.h src/compound_shape.h src/utility.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+TEST: test/ut_rectangle.h test/ut_circle.h test/ut_triangle.h test/ut_two_dimensional_vector.h test/compound_shape.h test/iterator.h test/ut_utility.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/ut_utility.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -299,36 +328,59 @@ TEST: test/ut_paragraph.h test/ut_list_item.h test/ut_text.h test/ut_main.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
+ITERATOR: src/iterator.h src/null_iterator.h src/compound_iterator.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 ut_main: test/ut_main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 9):
-	g++ -std=c++11 test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
-
-# Not a target:
-src/paragraph.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/list_item.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  recipe to execute (from 'makefile', line 17):
+	g++ -std=c++11 -Wfatal-errors test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 15):
+#  recipe to execute (from 'makefile', line 23):
 	rm -rf bin
 	
 
 # Not a target:
-test/ut_paragraph.h:
+src/null_iterator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/ut_rectangle.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/compound_shape.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/shape.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/utility.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/compound_shape.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -363,26 +415,37 @@ directories:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'makefile', line 12):
+#  recipe to execute (from 'makefile', line 20):
 	mkdir -p bin
 
+# Not a target:
+src/compound_iterator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/ut_two_dimensional_vector.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=19/1024=2%, Rehash=0, Collisions=2/49=4%
+# Load=31/1024=3%, Rehash=0, Collisions=0/70=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3336 / storage = 49983 B / avg = 14 B
-# current buf: size = 8174 B / used = 992 B / count = 63 / avg = 15 B
-# other used: total = 41809 B / count = 3273 / avg = 12 B
-# other free: total = 53 B / max = 14 B / min = 3 B / avg = 8 B
+# strcache buffers: 7 (6) / strings = 3346 / storage = 50206 B / avg = 15 B
+# current buf: size = 8174 B / used = 1219 B / count = 75 / avg = 16 B
+# other used: total = 42032 B / count = 3271 / avg = 12 B
+# other free: total = 57 B / max = 14 B / min = 6 B / avg = 9 B
 
-# strcache perfor 
-mance: lookups = 3393 / hit rate = 1%
+# strcache performance: lookups = 3404 / hit rate = 1%
 # hash-table stats:
-# Load=3336/8192=41%, Rehash=0, Collisions=1091/3393=32%
-# Finished Make data base on Sun Oct 17 19:59:22 2021
+# Load=3346/8192=41%, Rehash=0, Collisions=1095/3404=32%
+# Finished Make data base on Fri Oct 29 18:17:22 2021
 
  
