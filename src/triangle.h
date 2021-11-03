@@ -1,8 +1,6 @@
 #pragma once
 
-#include <stdio.h>
 #include <exception>
-#include <iostream>
 #include <math.h>
 #include "shape.h"
 #include "two_dimensional_vector.h"
@@ -13,19 +11,17 @@ using std::exception;
 
 class Triangle: public Shape {
     public:
-        Triangle(TwoDimensionalVector vec1, TwoDimensionalVector vec2) {
-            _a = cal_edge(vec1.x(),vec1.y(),0,0);
-            _b = cal_edge(vec1.x(),vec1.y(),vec2.x(),vec2.y());
-            _c = cal_edge(vec2.x(),vec2.y(),0,0);
-
-            c0x = 0.0;
-            c0y = 0.0;
-            c1x = vec1.x();
-            c1y = vec1.y();
-            c2x = vec2.x();
-            c2y = vec2.y();
-
-            if( (this->area()==0) || (isTriangle(vec1,vec2) == false) ){throw std::string("vectors cannot make a triangle");}
+        Triangle(TwoDimensionalVector v1, TwoDimensionalVector v2) {
+            if( isParallel(v1,v2) ) throw std::string("vectors are paralleled !");
+            else {
+                _p1x = v1.x();
+                _p1y = v1.y();
+                _p2x = v2.x();
+                _p2y = v2.y();
+                _a = v1.length();
+                _b = v2.length();
+                _c = sqrt( pow(_p1x-_p2x,2) + pow(_p1y-_p2y,2) ); //    sqrt[ (x1-x2)^2 + (y1-y2)^2 ]
+            }
         }
 
         double area() const override{
@@ -38,11 +34,9 @@ class Triangle: public Shape {
         }
 
         std::string info() const override{
-            char information[63];
-            sprintf(information, "Triangle ([%.2lf,%.2lf] [%.2lf,%.2lf])",
-            (round(c1x*100.00))/100.00,(round(c1y*100.00))/100.00,
-            (round(c2x*100.00))/100.00,(round(c2y*100.00))/100.00);
-            return information;
+            char temp[63];
+            sprintf(temp , "Triangle ([%.2lf,%.2lf] [%.2lf,%.2lf])" , round(_p1x*100)/100 , round(_p1y*100)/100 , round(_p2x*100)/100 , round(_p2y*100)/100 );
+            return temp;
         }
 
         Iterator* createIterator() override {return new NullIterator();}
@@ -51,17 +45,13 @@ class Triangle: public Shape {
 
         void deleteShape(Shape* shape) {throw std::string("Cannot do deleteShape!");}
     private:
-        double _a,_b,_c;
-        double c0x,c0y,c1x,c1y,c2x,c2y;
+        double _p1x, _p1y;
+        double _p2x, _p2y;
+        double _a, _b, _c;
 
-        bool isTriangle(TwoDimensionalVector vec1, TwoDimensionalVector vec2){
-            double m1 = (vec1.y()/vec1.x());
-            double m2 = (vec2.y()/vec2.x());
-            if(m1 == m2) return false;  //斜率相等則兩向量平行
-            else return true;
-        }
-
-        double cal_edge(double x1,double y1,double x2,double y2){
-            return sqrt(pow((x1-x2),2) + pow((y1-y2),2));
-        }
+        bool isParallel(TwoDimensionalVector v1, TwoDimensionalVector v2) {
+        if( v1.x()==0 && v2.x()==0 ) return true;
+        else if( v1.x()!=0 && v2.x()!=0 ) return (v1.y()/v1.x() == v2.y()/v2.x());
+        else return false;
+    }
 };

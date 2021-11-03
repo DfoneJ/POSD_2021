@@ -9,7 +9,7 @@ TEST(CaseTriangle, CreateFail) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("vectors cannot make a triangle"), e);
+        ASSERT_EQ(std::string("vectors are paralleled !"), e);
     }
 }
 
