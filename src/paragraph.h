@@ -5,7 +5,9 @@
 #include <list>
 #include "article.h"
 #include "iterator/compound_iterator.h"
-#include "visitor/article_visitor"
+#include "visitor/article_visitor.h"
+
+typedef CompoundIterator<std::list<Article *>::iterator> CompoundArticleIterator;
 
 class Paragraph : public Article {
 public:
@@ -20,6 +22,7 @@ public:
                 _text = "#"+_text;
             _text = _text+" "+text;
             _original_text = _text;
+            _HtmlText = _text;
         }
     }
 
@@ -27,9 +30,13 @@ public:
 
     std::string getText() const override { return _original_text; }
 
+    std::string getFullText() const override { return _text; }
+
+    std::string getHtmlText() const override { return "<div>" + _HtmlText + "</div>"; } //<span>text</span>
+
     int getLevel() const override { return _level; }
 
-    Iterator* createIterator() override { return new CompoundIterator<std::list<Article *>::const_iterator>(_articles.begin(), _articles.end()); }
+    Iterator* createIterator() override { return new CompoundArticleIterator(_articles.begin(), _articles.end()); }
 
     void accept(ArticleVisitor* visitor) override { visitor->visitParagraph(this); } // DO
 
@@ -40,11 +47,13 @@ public:
         else{
             _text = _text + "\n";
             _text = _text + dpFormat->getText();
+            _HtmlText = _HtmlText + dpFormat->getHtmlText();
             _articles.push_back(dpFormat);
         }
     }
 private:
     std::string _text="";
+    std::string _HtmlText="";
     std::string _original_text="";
     std::list<Article*> _articles;
     int _level;

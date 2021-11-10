@@ -4,7 +4,7 @@
 #include <exception>
 #include "article.h"
 #include "iterator/null_iterator.h"
-#include "visitor/article_visitor"
+#include "visitor/article_visitor.h"
 
 class Text : public Article {
     public:
@@ -13,6 +13,10 @@ class Text : public Article {
         ~Text() {}
 
         std::string getText() const override { return _text; }
+
+        std::string getFullText() const override { return _text; }
+
+        std::string getHtmlText() const override { return "<span>" + _text + "</span>"; } //<span>text</span>
 
         int getLevel() const override { return 0; }
 

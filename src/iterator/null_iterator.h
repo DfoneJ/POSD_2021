@@ -8,7 +8,7 @@ class NullIterator : public Iterator {
    public:
     void first() override {throw std::string("nulptr has no first()!");}
 
-    Shape* currentItem() const override {throw std::string("nulptr has no currentItem()!");}
+    Article* currentItem() const override {throw std::string("nulptr has no currentItem()!");}
 
     void next() override {throw std::string("nulptr has no next()!");}
 

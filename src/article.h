@@ -7,9 +7,13 @@ class Article {
    public:
     virtual ~Article(){};
 
-    virtual std::string getText() = 0;
+    virtual std::string getText() const = 0;
 
-    virtual int getLevel() = 0 ;
+    virtual std::string getFullText() const = 0;
+
+    virtual std::string getHtmlText() const = 0;
+
+    virtual int getLevel() const {}
 
     virtual Iterator* createIterator() = 0;
 
