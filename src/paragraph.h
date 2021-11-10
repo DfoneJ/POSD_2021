@@ -4,10 +4,9 @@
 #include <exception>
 #include <list>
 #include "article.h"
-#include "iterator/compound_iterator.h"
+//#include "iterator/compound_iterator.h"
 #include "visitor/article_visitor.h"
-
-typedef CompoundIterator<std::list<Article *>::iterator> CompoundArticleIterator;
+#include <string>
 
 class Paragraph : public Article {
 public:
@@ -18,25 +17,26 @@ public:
             throw std::string("level cannot greater than 6");
         else{
             _level = level;
+            _s_level = std::to_string(level);
+            _text = text;
+            _HtmlText = text;
             for(int i=1;i<=_level;i++)
-                _text = "#"+_text;
-            _text = _text+" "+text;
-            _original_text = _text;
-            _HtmlText = _text;
+                _FullText = "#" + _FullText;
+            _FullText = _FullText+" "+text;
         }
     }
 
     ~Paragraph() {}
 
-    std::string getText() const override { return _original_text; }
+    std::string getText() const override { return _text; }
 
-    std::string getFullText() const override { return _text; }
+    std::string getFullText() const override { return _FullText; } // Markdown
 
-    std::string getHtmlText() const override { return "<div>" + _HtmlText + "</div>"; } //<span>text</span>
+    std::string getHtmlText() const override { return "<div><h"+_s_level+">" + _HtmlText + "</h"+_s_level+"></div>"; } //<div><h1>title</h1></div>
 
     int getLevel() const override { return _level; }
 
-    Iterator* createIterator() override { return new CompoundArticleIterator(_articles.begin(), _articles.end()); }
+    //Iterator* createIterator() override { /*return new CompoundIterator<std::list<Article *>::const_iterator>(_articles.begin(), _articles.end()); */}
 
     void accept(ArticleVisitor* visitor) override { visitor->visitParagraph(this); } // DO
 
@@ -45,16 +45,16 @@ public:
             throw std::string("cannot add smaller or equal level paragraph!");
         }
         else{
-            _text = _text + "\n";
-            _text = _text + dpFormat->getText();
+            _FullText = _FullText + "\n" + dpFormat->getFullText();
             _HtmlText = _HtmlText + dpFormat->getHtmlText();
             _articles.push_back(dpFormat);
         }
     }
 private:
     std::string _text="";
+    std::string _FullText="";
     std::string _HtmlText="";
-    std::string _original_text="";
     std::list<Article*> _articles;
     int _level;
+    std::string _s_level ="";
 };

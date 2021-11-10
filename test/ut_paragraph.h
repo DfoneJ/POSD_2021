@@ -1,5 +1,5 @@
-//#include "../src/text.h"
-//#include "../src/list_item.h"
+#include "../src/text.h"
+#include "../src/list_item.h"
 #include "../src/paragraph.h"
 #include <typeinfo>
 
@@ -22,7 +22,7 @@ TEST(CaseParagraph, CreatSevenLevel){
         ASSERT_EQ(std::string("level cannot greater than 6"), e);
     }
 }
-/*
+
 TEST(CaseParagraph, Create){
     Paragraph p(1,"title_1");
     EXPECT_EQ(std::string("9Paragraph"),typeid(p).name());
@@ -33,10 +33,21 @@ TEST(CaseParagraph, GetLevel){
     ASSERT_EQ(1,p.getLevel());
 }
 
-TEST(CaseParagraph, GetOriginalText){
+TEST(CaseParagraph, GetText){
     Paragraph p(1,"title_1");
-    ASSERT_EQ(std::string("# title_1\n"),p.getText());
+    ASSERT_EQ(std::string("title_1"),p.getText());
 }
+
+TEST(CaseParagraph, GetFullText){
+    Paragraph p(1,"title_1");
+    ASSERT_EQ(std::string("# title_1"),p.getFullText());
+}
+
+TEST(CaseParagraph, GetHtmlText){
+    Paragraph p(1,"title_1");
+    ASSERT_EQ(std::string("<div><h1>title_1</h1></div>"),p.getHtmlText());
+}
+
 
 TEST(CaseParagraph, AddFail){
     Paragraph p2(2, "title1");
@@ -61,7 +72,6 @@ TEST(CaseParagraph, Add){
     p2->add(new ListItem("list4"));
     p2->add(new Text("sub text"));
     p.add(p2);
-    ASSERT_EQ(std::string("# title\n- list1\n- list2\ntext\n## title2\n- list3\n- list4\nsub text"),p.getText());
+    ASSERT_EQ(std::string("# title\n- list1\n- list2\ntext\n## title2\n- list3\n- list4\nsub text"),p.getFullText());
     delete p2;
 }
-*/

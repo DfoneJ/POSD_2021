@@ -15,7 +15,7 @@ class Article {
 
     virtual int getLevel() const {}
 
-    virtual Iterator* createIterator() = 0;
+    //virtual Iterator* createIterator() {};
 
     virtual void accept(ArticleVisitor* visitor) = 0;
 

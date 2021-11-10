@@ -8,7 +8,7 @@ TEST(CaseListItem, Create){
 
 TEST(CaseListItem, GetText){
     ListItem lit("test_listitem");
-    ASSERT_EQ(std::string("- test_listitem"),lit.getText());
+    ASSERT_EQ(std::string("test_listitem"),lit.getText());
 }
 
 TEST(CaseListItem, GetFullText){
@@ -18,7 +18,7 @@ TEST(CaseListItem, GetFullText){
 
 TEST(CaseListItem, GetHtmlText){
     ListItem lit("test_listitem");
-    ASSERT_EQ(std::string("<li>- test_listitem</li>"),lit.getHtmlText());
+    ASSERT_EQ(std::string("<li>test_listitem</li>"),lit.getHtmlText());
 }
 
 TEST(CaseListItem, GetLevel){

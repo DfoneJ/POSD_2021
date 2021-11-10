@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <exception>
 #include "article.h"
-#include "iterator/null_iterator.h"
+//#include "iterator/null_iterator.h"
 #include "visitor/article_visitor.h"
 
 class Text : public Article {
@@ -20,7 +20,7 @@ class Text : public Article {
 
         int getLevel() const override { return 0; }
 
-        Iterator* createIterator() override { return new NullIterator(); }
+        //Iterator* createIterator() override { /*return new NullIterator();*/ }
 
         void accept(ArticleVisitor* visitor) override { visitor->visitText(this); } // DO
 
