@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Nov 10 15:58:33 2021
+# Make data base, printed on Wed Nov 10 17:05:04 2021
 
 # Variables
 
@@ -29,14 +29,15 @@ VSCODE_LOG_NATIVE = false
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
-# environment
+# env 
+ironment
 HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
 ^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
 # makefile
-CURDIR := c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598010_hw_midterm
+CURDIR := c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW/history_HW_and_tutorials/HW_Midterm_1
 # default
 SHELL := sh.exe
 # environment
@@ -48,8 +49,7 @@ ONEDRIVE = C:\Users\JB\OneDrive
 # environment
 CLIENTNAME = LAPTOP-3RV0QR2F
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.J 
-S;.JSE;.WSF;.WSH;.MSC
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # environment
@@ -61,9 +61,9 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-8045b691-223b-4529-9c8c-ba111281ff0f-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-65fdbbac-3943-476c-a5b7-06c70acaa967-sock
 # environment
-VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD
+VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW\history_HW_and_tutorials\HW_Midterm_1
 # environment
 PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Users\JB\AppData\Local\Microsoft\WindowsApps;C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin
 # environment
@@ -85,14 +85,15 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_24132_VMUGRONTRTVXCQJK
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_6408_SZVBANAGKDUOMPTI
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
 COMPUTERNAME = DESKTOP-NKVBO4M
 # environment
 PROGRAMFILES = C:\Program Files (x86)
-# environment
+# envi 
+ronment
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
@@ -103,7 +104,7 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\JB\AppData\Roaming\Code\CachedData\b3318bc0524af3d74034b8bb8a64df0ccf35549a
+VSCODE_CODE_CACHE_PATH = C:\Users\JB\AppData\Roaming\Code\CachedData\f4af3cbf5a99787542e2a30fe1fd37cd644cc31f
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -145,7 +146,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\ca6ab60109bf24a64d9a1b9abde688bf-1.62.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\ca6ab60109bf24a64d9a1b9abde688bf-1.62.1-main-sock
 # environment
 HOMEPATH = \Users\JB
 # environment
@@ -193,23 +194,23 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 24132
+VSCODE_PID = 6408
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
 # Load=92/1024=9%, Rehash=0, Collisions=13/119=11%
 
-# Pattern-specific Variable Values
+# Pattern-specific Var 
+iable Values
 
 # No pattern-specific variable values.
 
 # Directories
 
-# C:\Users\JB\AppDat 
-a\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1636117378): 15 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1636117378): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598010_hw_midterm, mtime 1636528633): 8 files, no impossibilities.
-# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1636450470): 4 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW/history_HW_and_tutorials/HW_Midterm_1, mtime 1636531336): 8 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1636531163): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1633488672): 128 files, no impossibilities.
@@ -274,8 +275,7 @@ src/shape_visitor.h:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has  
-not been updated.
+#  File has not been updated.
 
 # Not a target:
 src/shape_visitor.cpp:
@@ -334,7 +334,8 @@ src/circle.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-SHAPE: src/shape.h src/rectangle.h src/circle.h src/triangle.h src/two_dimensional_vector.h src/compound_shape.h src/utility.h
+SHAPE: src/shape.h src/rec 
+tangle.h src/circle.h src/triangle.h src/two_dimensional_vector.h src/compound_shape.h src/utility.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -344,7 +345,8 @@ VISITOR: src/visitor.h src/shape_visitor.h src/shape_visitor.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
-TEST: test/ut_rectangle.h test/ut_circle.h test/ut_triangle.h test/ut_two_dimensional_vector.h test/compound_shape.h test/iterator.h test/ut_utility.h test/ut_visitor.h
+TEST: test/ut_rectangle.h test/ut_circle.h test/ut_triangle.h test/ut_two_dimensional_vector.h test/compound_shape.h test/iter 
+ator.h test/ut_utility.h test/ut_visitor.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -366,8 +368,7 @@ ITERATOR: src/iterator.h src/null_iterator.h src/compound_iterator.h
 #  Modification time never checked.
 #  File has not been updated.
 
-ut_main: test/ut_m 
-ain.cpp obj/shape_visitor.o
+ut_main: test/ut_main.cpp obj/shape_visitor.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -468,8 +469,7 @@ src/compound_iterator.h:
 # Not a target:
 test/ut_two_dimensional_vector.h:
 #  Implicit rule search has not been done.
-#  Modific 
-ation time never checked.
+#  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
@@ -482,12 +482,13 @@ ation time never checked.
 
 # strcache buffers: 7 (6) / strings = 3349 / storage = 50257 B / avg = 15 B
 # current buf: size = 8174 B / used = 1269 B / count = 76 / avg = 16 B
-# other used: total = 42083 B / count = 3273 / avg = 12 B
+# other used: total 
+ = 42083 B / count = 3273 / avg = 12 B
 # other free: total = 56 B / max = 14 B / min = 5 B / avg = 9 B
 
 # strcache performance: lookups = 3412 / hit rate = 1%
 # hash-table stats:
 # Load=3349/8192=41%, Rehash=0, Collisions=1115/3412=33%
-# Finished Make data base on Wed Nov 10 15:58:33 2021
+# Finished Make data base on Wed Nov 10 17:05:04 2021
 
  

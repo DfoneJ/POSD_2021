@@ -18,7 +18,9 @@
 // };
 
 class Shape;
-typedef bool (*ShapeConstraint)(Shape*); // pointer to function
+
+typedef bool (*ShapeConstraint)(Shape*); // pointer to a function which accept a pointer to Shape and return boolean.
+
 class SelectShapeVisitor: public Visitor {
 public:
     SelectShapeVisitor(): _result(nullptr), _constraint(nullptr) {}
