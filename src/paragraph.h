@@ -19,7 +19,7 @@ public:
             _level = level;
             _s_level = std::to_string(level);
             _text = text;
-            _HtmlText = text;
+            _HtmlText = "<h"+_s_level+">"+text+"</h"+_s_level+">";
             for(int i=1;i<=_level;i++)
                 _FullText = "#" + _FullText;
             _FullText = _FullText+" "+text;
@@ -32,7 +32,7 @@ public:
 
     std::string getFullText() const override { return _FullText; } // Markdown
 
-    std::string getHtmlText() const override { return "<div><h"+_s_level+">" + _HtmlText + "</h"+_s_level+"></div>"; } //<div><h1>title</h1></div>
+    std::string getHtmlText() const override { return "<div>" + _HtmlText + "</div>"; } //<div><h1>title</h1></div>
 
     int getLevel() const override { return _level; }
 
