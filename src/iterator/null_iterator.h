@@ -1,13 +1,11 @@
 #pragma once
 
+#include "iterator.h"
 #include <stdio.h>
 #include <exception>
-#include <iostream>
-#include "iterator.h"
 
 class NullIterator : public Iterator {
-public:
-    
+   public:
     void first() override {throw std::string("nulptr has no first()!");}
 
     Shape* currentItem() const override {throw std::string("nulptr has no currentItem()!");}
