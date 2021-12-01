@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Dec 01 18:30:56 2021
+# Make data base, printed on Wed Dec 01 18:36:13 2021
 
 # Variables
 
@@ -57,11 +57,12 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3d3fabd6-ac64-4cd4-b4fe-2b6399e3c84a-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-36fdbeb9-ee6a-468f-afa9-73ddc9acc634-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # environment
-PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files\nodejs\;C:\Users\JB\AppData\Local\Microsoft\WindowsApps;C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;;C:\Users\JB\AppData\Roaming\npm
+PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Progra 
+m Files\PuTTY\;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files\nodejs\;C:\Users\JB\AppData\Local\Microsoft\WindowsApps;C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;;C:\Users\JB\AppData\Roaming\npm
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -81,7 +82,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_7864_QBYNECYDIMPDOOZZ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11604_JTWBROASVQAIHKBG
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -147,7 +148,8 @@ PROCESSOR_ARCHITEW6432 = AMD64
 # automatic
 *F = $(notdir $*)
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
+PROCESSOR_IDENTIFIER = Int 
+el64 Family 6 Model 158 Stepping 13, GenuineIntel
 # environment
 OS = Windows_NT
 # environment
@@ -196,11 +198,10 @@ PROCESSOR_REVISION = 9e0d
 .RECIPEPREFIX := 
 # environment
 LANG = C
-# envir 
-onment
+# environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 7864
+VSCODE_PID = 11604
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -215,7 +216,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # : could not be stat'd.
 # C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1637190634): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1638354654): 7 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1638354685): 8 files, no impossibilities.
 # C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1638098843): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
@@ -223,17 +224,17 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # C:\Windows (key C:/Windows, mtime 1636544062): 121 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1636544073): 171 files, no impossibilities.
 # C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin (key C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2021.2.3/bin, mtime 1638084331): 31 files, no impossibilities.
+ 
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1638164184): 13 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1638354391): 2844 files, no impossibilities.
 # C:\Users\JB\AppData\Roaming\npm (key C:/Users/JB/AppData/Roaming/npm, mtime 1638338547): 6 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
-# 3391 files, no impossibilities in 15 directories.
+# 3392 files, no impossibilities in 15 directories.
 
 # Implicit Rules
 
-# No implic 
-it rules.
+# No implicit rules.
 
 # Files
 
@@ -295,7 +296,8 @@ test: all
 #  recipe to execute (from 'makefile', line 30):
 	bin/ut_all
 
-# Not a target:
+# Not a t 
+arget:
 makefile:
 #  Implicit rule search has been done.
 #  Last modified 2021-12-01 13:06:41
@@ -336,8 +338,7 @@ src/triangle.h:
 src/circle.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been upda 
-ted.
+#  File has not been updated.
 
 # Not a target:
 src/visitor/shape_visitor.h:
@@ -377,7 +378,8 @@ clean:
 test/ut_rectangle.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  File has not been  
+updated.
 
 # Not a target:
 test/iterator/ut_compound_iterator.h:
@@ -422,7 +424,6 @@ directories:
 # automatic
 # * := 
 # automatic
- 
 # + := 
 # automatic
 # | := 
@@ -447,18 +448,19 @@ test/ut_two_dimensional_vector.h:
 # Load=29/1024=3%, Rehash=0, Collisions=2/70=3%
 # VPATH Search Paths
 
-# No 'vpath' search paths.
+# No 'vpath' search pat 
+hs.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3388 / storage = 50976 B / avg = 15 B
+# strcache buffers: 7 (6) / strings = 3389 / storage = 50980 B / avg = 15 B
 # current buf: size = 8174 B / used = 1985 B / count = 117 / avg = 16 B
-# other used: total = 42802 B / count = 3271 / avg = 13 B
-# other free: total = 53 B / max = 13 B / min = 4 B / avg = 8 B
+# other used: total = 42806 B / count = 3272 / avg = 13 B
+# other free: total = 49 B / max = 13 B / min = 4 B / avg = 8 B
 
-# strcache performance: lookups = 3450 / hit rate = 1%
+# strcache performance: lookups = 3451 / hit rate = 1%
 # hash-table stats:
-# Load=3388/8192=41%, Rehash=0, Collisions=1128/3450=33%
-# Finished Make data base on Wed Dec 01 18:30:56 2021
+# Load=3389/8192=41%, Rehash=0, Collisions=1128/3451=33%
+# Finished Make data base on Wed Dec 01 18:36:13 2021
 
  
