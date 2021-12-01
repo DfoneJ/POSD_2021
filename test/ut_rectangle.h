@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../src/rectangle.h"
 
 TEST(CaseRectangle, CreateFail) {
@@ -42,7 +41,7 @@ TEST(CaseRectangle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no first()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // currentItem
     try {
@@ -50,7 +49,7 @@ TEST(CaseRectangle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no currentItem()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // next
     try {
@@ -58,7 +57,7 @@ TEST(CaseRectangle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no next()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // isDone
     ASSERT_EQ(rit->isDone(),true);
@@ -73,7 +72,7 @@ TEST(CaseRectangle, AddShape) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("Cannot do addShape!"), e);
+        ASSERT_EQ(std::string("can't add shape"), e);
     }
     delete r1;
 }
@@ -86,7 +85,7 @@ TEST(CaseRectangle, DeleteShape) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("Cannot do deleteShape!"), e);
+        ASSERT_EQ(std::string("can't delete shape"), e);
     }
     delete r1;
 }

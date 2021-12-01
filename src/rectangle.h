@@ -1,47 +1,35 @@
 #pragma once
 
-#include <stdio.h>
-#include <exception>
-#include <iostream>
 #include "shape.h"
-#include <cmath>
 #include "iterator/null_iterator.h"
-
-using namespace std;
-using std::exception;
+#include "visitor/shape_visitor.h"
 
 class Rectangle : public Shape {
-    public: 
+    public:
         Rectangle(double length, double width) {
-            if(length <=0 || width <=0){throw std::string("edges of rectangle should larger than zero");}
+            if(length <=0 || width <=0) { throw std::string("edges of rectangle should larger than zero"); }
             else{
                 _length = length;
                 _width = width;
+                sprintf(_info, "Rectangle (%.2lf %.2lf)", (round(_length*100))/100, (round(_width*100))/100 );
             }
-            
         }
 
-        double area() const override{
-            return _length * _width;
-        }
+        double area() const override { return (_length*_width); } // 面積
 
-        double perimeter() const override{
-            return (_length + _width) * 2.000;
-        }
+        double perimeter() const override { return 2*(_length+_width); } // 周長
+
+        std::string info() const override { return _info; } // 資訊
+
+        void addShape(Shape* shape) { throw std::string("can't add shape"); } // 加入形狀
+
+        void deleteShape(Shape* shape) { throw std::string("can't delete shape"); } // 刪除形狀
+
+        Iterator* createIterator() override { return new NullIterator(); } // Null 迭代器
         
-        std::string info() const override{
-            char information[63];
-            sprintf(information, "Rectangle (%.2lf %.2lf)",
-            (round(_length*100.00))/100.00, (round(_width*100.00))/100.00);
-            return information;
-        }
+        void accept(ShapeVisitor* visitor) override { visitor->visitRectangle(this); } // 接受拜訪
 
-        Iterator* createIterator() override {return new NullIterator();}
-
-        void addShape(Shape* shape) {throw std::string("Cannot do addShape!");}
-
-        void deleteShape(Shape* shape) {throw std::string("Cannot do deleteShape!");}
     private:
-        double  _length,_width ;
-
+        double _length, _width;
+        char _info[30];
 };

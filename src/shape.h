@@ -1,14 +1,15 @@
 #pragma once
 
-#include <stdio.h>
+#include <string>
+#include <cmath>
 #include <exception>
-#include <iostream>
 
 class Iterator;
+class ShapeVisitor;
 
 class Shape {
-public:
-    virtual ~Shape() {};
+   public:
+    virtual ~Shape(){};
 
     virtual double area() const = 0;
 
@@ -16,9 +17,11 @@ public:
 
     virtual std::string info() const = 0;
 
+    virtual void addShape(Shape* shape) { throw "can't add shape"; }
+
+    virtual void deleteShape(Shape* shape) { throw "can't delete shape"; }
+    
     virtual Iterator* createIterator() = 0;
-
-    virtual void addShape(Shape* shape) {}
-
-    virtual void deleteShape(Shape* shape) {}
+    
+    virtual void accept(ShapeVisitor* visitor) = 0;
 };

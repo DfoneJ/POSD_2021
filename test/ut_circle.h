@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../src/circle.h"
 
 TEST(CaseCircle, CreateFail) {
@@ -35,7 +34,7 @@ TEST(CaseCircle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no first()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // currentItem
     try {
@@ -43,7 +42,7 @@ TEST(CaseCircle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no currentItem()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // next
     try {
@@ -51,7 +50,7 @@ TEST(CaseCircle, CreateIterator) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("nulptr has no next()!"), e);
+        ASSERT_EQ(std::string("Already met the end !"), e);
     }
     // isDone
     ASSERT_EQ(cit->isDone(),true);
@@ -66,7 +65,7 @@ TEST(CaseCircle, AddShapeFail) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("Cannot do addShape!"), e);
+        ASSERT_EQ(std::string("can't add shape"), e);
     }
     delete c1;
 }
@@ -79,7 +78,7 @@ TEST(CaseCircle, DeleteShapeFail) {
         FAIL();
     }
     catch(std::string e) {
-        ASSERT_EQ(std::string("Cannot do deleteShape!"), e);
+        ASSERT_EQ(std::string("can't delete shape"), e);
     }
     delete c1;
 }
