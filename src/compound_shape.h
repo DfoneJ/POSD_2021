@@ -7,7 +7,7 @@
 
 class CompoundShape : public Shape {
 public:
-    ~CompoundShape() {}
+    ~CompoundShape() { for(Shape* s : _shapes) delete s; }
 
     double area() const override { 
         double area = 0;

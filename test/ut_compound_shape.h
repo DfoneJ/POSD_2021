@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <iostream>
 
+#include <fstream>
+
 TEST(CaseCompoundShape, Area) {
     CompoundShape* cs = new CompoundShape();
     ASSERT_NEAR(cs->area(), 0, 0.001);
@@ -53,6 +55,6 @@ TEST(CaseCompoundShape, DeleteShape) {
     Iterator* csit2 = cs->createIterator(); // 刪除circle後的內容
     ASSERT_TRUE( csit2->isDone());
     ASSERT_EQ(std::string("P13CompoundShape"), typeid(cs).name());
-    ASSERT_EQ(std::string("13CompoundShape"), typeid(*cs).name());
+    ASSERT_EQ(typeid(CompoundShape), typeid(*cs));
     delete cs, c, csit1, csit2;
 }
