@@ -8,7 +8,7 @@
 class Triangle : public Shape {
     public:
         Triangle(TwoDimensionalVector vec1, TwoDimensionalVector vec2) {
-            if( isParallel(vec1,vec2) ) throw std::string("vectors are paralleled !");
+            if(isParallel(vec1,vec2)) throw std::string("vectors are paralleled !");
             else {
                 _vec1 = vec1;
                 _vec2 = vec2;
@@ -41,7 +41,8 @@ class Triangle : public Shape {
         void accept(ShapeVisitor* visitor) override { visitor->visitTriangle(this); } // 接受拜訪
 
     private:
-        TwoDimensionalVector _vec1, _vec2;
+        TwoDimensionalVector _vec1;
+        TwoDimensionalVector _vec2;
         double _p1x, _p1y;
         double _p2x, _p2y;
         double _a, _b, _c;

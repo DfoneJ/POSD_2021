@@ -5,9 +5,8 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Dec 09 12:11:00 2021
+# Make data base, printed on Thu Dec 09 12:21:12 2021
 
 # Variables
 
@@ -56,7 +55,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-9aea4e7f-6a57-475d-84a0-3c2675edba4b-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-1449d84d-5a85-4eea-8e66-0ecaee06ad02-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # makefile (from 'makefile', line 18)
@@ -82,7 +81,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16592_EJSOAXLJNSNHVODI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11876_YXIWPOGRBHNWBIYI
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -200,7 +199,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 16592
+VSCODE_PID = 11876
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -215,7 +214,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # : could not be stat'd.
 # C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1637190634): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639017394): 8 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639023475): 8 files, no impossibilities.
 # C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639012895): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
@@ -245,8 +244,7 @@ test/ut_circle.h:
 # Not a target:
 src/two_dimensional_vector.h:
 #  Implicit rule search has not been done.
-#  Modification time never chec 
-ked.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -487,13 +485,12 @@ test/ut_two_dimensional_vector.h:
 
 # strcache buffers: 7 (6) / strings = 3395 / storage = 51146 B / avg = 15 B
 # current buf: size = 8174 B / used = 2151 B / count = 123 / avg = 17 B
-# other used: tot 
-al = 42972 B / count = 3272 / avg = 13 B
+# other used: total = 42972 B / count = 3272 / avg = 13 B
 # other free: total = 49 B / max = 13 B / min = 4 B / avg = 8 B
 
 # strcache performance: lookups = 3457 / hit rate = 1%
 # hash-table stats:
 # Load=3395/8192=41%, Rehash=0, Collisions=1129/3457=33%
-# Finished Make data base on Thu Dec 09 12:11:00 2021
+# Finished Make data base on Thu Dec 09 12:21:12 2021
 
  

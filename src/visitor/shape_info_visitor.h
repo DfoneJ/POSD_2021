@@ -2,12 +2,11 @@
 
 #include <string>
 
-// #include "../circle.h"
-// #include "../compound_shape.h"
-// #include "../rectangle.h"
-// #include "../triangle.h"
-#include "../shape.h"
-// #include "../iterator/compound_iterator.h"
+#include "../circle.h"
+#include "../compound_shape.h"
+#include "../rectangle.h"
+#include "../triangle.h"
+#include "../iterator/iterator.h"
 #include "shape_visitor.h"
 
 class ShapeInfoVisitor : public ShapeVisitor {

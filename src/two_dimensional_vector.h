@@ -1,10 +1,10 @@
 #pragma once
 
-#include <math.h>
+#include <cmath>
 
 class TwoDimensionalVector {
     public:
-        TwoDimensionalVector() {}
+        TwoDimensionalVector() : _x(0), _y(0) {}
         TwoDimensionalVector(double x, double y) : _x(x), _y(y) { sprintf(_info, "[%.2lf,%.2lf]", (round(_x*100))/100, (round(_y*100))/100); }
 
         double x() const { return _x; }
