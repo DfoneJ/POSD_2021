@@ -1,11 +1,8 @@
 #include "../src/compound_shape.h"
 #include "../src/circle.h"
 #include "../src/rectangle.h"
-#include "../src/triangle.h"
+// #include "../src/triangle.h"
 #include <stdio.h>
-#include <iostream>
-
-#include <fstream>
 
 TEST(CaseCompoundShape, Area) {
     CompoundShape* cs = new CompoundShape();
