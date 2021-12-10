@@ -34,7 +34,7 @@ TEST(CaseInfoVisitor, VisitOneLevelCompound) {
     cs->addShape(c2);
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     cs->accept(visitor);
-    ASSERT_EQ(visitor->getResult(), "CompoundShape{\n  Circle (2.00)\n  Circle (1.00)\n}\n");
+    ASSERT_EQ(visitor->getResult(), "CompoundShape {\n  Circle (2.00)\n  Circle (1.00)\n}\n");
     delete cs, c1, c2, visitor;
 }
 
@@ -50,6 +50,6 @@ TEST(CaseInfoVisitor, VisitTwoLevelCompound) {
     cs2->addShape(cs1);
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     cs2->accept(visitor);
-    ASSERT_EQ(visitor->getResult(), "CompoundShape{\n  Circle (12.35)\n  CompoundShape{\n    Circle (1.10)\n    Rectangle (3.14 4.00)\n  }\n}\n");
+    ASSERT_EQ(visitor->getResult(), "CompoundShape {\n  Circle (12.35)\n  CompoundShape {\n    Circle (1.10)\n    Rectangle (3.14 4.00)\n  }\n}\n");
     delete cs1, c1, rect, cs2, c2, visitor;
 }

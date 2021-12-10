@@ -5,8 +5,9 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Dec 09 12:21:12 2021
+# Make data base, printed on Thu Dec 09 13:48:14 2021
 
 # Variables
 
@@ -29,7 +30,8 @@ VSCODE_LOG_NATIVE = false
 # environment
 HOMEDRIVE = C:
 # automatic
-@F = $(notdir $@)
+@F = $ 
+(notdir $@)
 # automatic
 ^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
 # makefile
@@ -55,7 +57,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-1449d84d-5a85-4eea-8e66-0ecaee06ad02-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-24efa894-903b-46b1-bef4-8f4a3178e5f6-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # makefile (from 'makefile', line 18)
@@ -81,7 +83,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11876_YXIWPOGRBHNWBIYI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8988_MMJJQXUOVOFYVBGK
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -182,7 +184,8 @@ MAKEFILES :=
 LC_ALL = C
 # automatic
 ^F = $(notdir $^)
-# default
+# def 
+ault
 SUFFIXES := 
 # environment
 SYSTEMDRIVE = C:
@@ -199,7 +202,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 11876
+VSCODE_PID = 8988
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -214,7 +217,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # : could not be stat'd.
 # C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1637190634): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639023475): 8 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639028689): 8 files, no impossibilities.
 # C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639012895): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
@@ -223,7 +226,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1636544073): 171 files, no impossibilities.
 # C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin (key C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2021.2.3/bin, mtime 1638084331): 31 files, no impossibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1638164184): 13 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1639021837): 2844 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1639026308): 2844 files, no impossibilities.
 # C:\Users\JB\AppData\Roaming\npm (key C:/Users/JB/AppData/Roaming/npm, mtime 1638338547): 6 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
@@ -264,7 +267,8 @@ all: directories ut_main
 
 .PHONY: clean test
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modif 
+ication time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -367,7 +371,8 @@ src/visitor/shape_visitor.h:
 #  File has not been updated.
 
 # Not a target:
-src/iterator/iterator.h:
+src/iterator/iterator.h 
+:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -420,7 +425,8 @@ src/visitor/shape_info_visitor.h:
 
 # Not a target:
 src/compound_shape.h:
-#  Implicit rule search has not been done.
+#  Implicit rule sea 
+rch has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -485,12 +491,13 @@ test/ut_two_dimensional_vector.h:
 
 # strcache buffers: 7 (6) / strings = 3395 / storage = 51146 B / avg = 15 B
 # current buf: size = 8174 B / used = 2151 B / count = 123 / avg = 17 B
-# other used: total = 42972 B / count = 3272 / avg = 13 B
+# other used: total 
+ = 42972 B / count = 3272 / avg = 13 B
 # other free: total = 49 B / max = 13 B / min = 4 B / avg = 8 B
 
 # strcache performance: lookups = 3457 / hit rate = 1%
 # hash-table stats:
 # Load=3395/8192=41%, Rehash=0, Collisions=1129/3457=33%
-# Finished Make data base on Thu Dec 09 12:21:12 2021
+# Finished Make data base on Thu Dec 09 13:48:14 2021
 
  

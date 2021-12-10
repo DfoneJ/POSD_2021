@@ -4,6 +4,7 @@
 TEST(CaseParser, Circle) {
     std::string filepath = "test/data/circle.txt";
     ShapeParser* parser = new ShapeParser(filepath);
+    ASSERT_NEAR(1, 1, 0.001);
     parser->parse();
     Shape* result = parser->getShape();
     ASSERT_EQ("Circle (1.00)", result->info());
@@ -46,7 +47,7 @@ TEST(CaseParser, SimpleCompound) {
     ShapeParser* parser = new ShapeParser(filepath);
     parser->parse();
     Shape* result = parser->getShape();
-    ASSERT_NEAR(1*1*M_PI + 3.14*4.00 + 3*4/2, result->area(), 0.001);
+    ASSERT_NEAR(1*1*M_PI + 3.14*4 + 3*4/2, result->area(), 0.001);
     delete parser, result;
 }
 

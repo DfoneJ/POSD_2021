@@ -17,7 +17,7 @@ public:
 
     void visitCompoundShape(CompoundShape* compoundShape) {
         clean_CompoundResult();
-        CompoundResult = CompoundResult + compoundShape->info() + std::string("{\n");
+        CompoundResult = CompoundResult + compoundShape->info() + std::string(" {\n");
         Iterator* csit = compoundShape->createIterator();
         _depth += 1;
         for (csit->first(); !csit->isDone(); csit->next()) {
