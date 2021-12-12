@@ -38,10 +38,18 @@ public:
             else if(token == "Rectangle") {
                 if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
                 double length = _scanner->nextDouble();
-                double width = _scanner->nextDouble();
-                if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
+                std::string RectangleSpecialCase = _scanner->next(); // Special case !!
+                if(RectangleSpecialCase == ",") { // (3.14, 4.00)
+                    double width = _scanner->nextDouble();
+                    if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
+                    _builder->buildRectangle(length, width);
+                }
+                if(RectangleSpecialCase == ")") { // (3.14 4.00)
+                    double width = _scanner->nextDouble();
+                    _builder->buildRectangle(length, width);
+                }
+                if((RectangleSpecialCase!=",") && (RectangleSpecialCase!=")")) { throw std::string("Invalid input !"); }
                 // std::cout << "Build Rectangle" << std::endl;
-                _builder->buildRectangle(length, width);
             }
             else if(token == "Triangle") {
                 if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
