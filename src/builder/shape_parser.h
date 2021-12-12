@@ -27,52 +27,46 @@ public:
     void parse() {
         std::string token="";
         while(!_scanner->isDone()) {
-            try{
-                token = _scanner->next();
-                if(token == "Circle") {
-                    if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
-                    double radius = _scanner->nextDouble();
-                    if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
-                    // std::cout << "Build Circle" << std::endl;
-                    _builder->buildCircle(radius); // 1 double
-                }
-                else if(token == "Rectangle") {
-                    if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
-                    double length = _scanner->nextDouble();
-                    double width = _scanner->nextDouble();
-                    if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
-                    // std::cout << "Build Rectangle" << std::endl;
-                    _builder->buildRectangle(length, width);
-                }
-                else if(token == "Triangle") {
-                    if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
-                    if(_scanner->next() != "[") { throw std::string("Invalid input !"); }
-                    double x1 = _scanner->nextDouble();
-                    if(_scanner->next() != ",") { throw std::string("Invalid input !"); }
-                    double y1 = _scanner->nextDouble();
-                    if(_scanner->next() != "]") { throw std::string("Invalid input !"); }
-                    if(_scanner->next() != "[") { throw std::string("Invalid input !"); }
-                    double x2 = _scanner->nextDouble();
-                    if(_scanner->next() != ",") { throw std::string("Invalid input !"); }
-                    double y2 = _scanner->nextDouble();
-                    if(_scanner->next() != "]") { throw std::string("Invalid input !"); }
-                    if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
-                    // std::cout << "Build Triangle" << std::endl;
-                    _builder->buildTriangle(x1, y1, x2, y2);
-                }
-                else if(token == "CompoundShape") {
-                    if(_scanner->next() != "{") { throw std::string("Invalid input !"); }
-                    // std::cout << "Build CompoundShape Begin" << std::endl;
-                    _builder->buildCompoundBegin();
-                }
-                else if(token == "}") {
-                    // std::cout << "Build CompoundShape End" << std::endl;
-                    _builder->buildCompoundEnd();
-                }
+            token = _scanner->next();
+            if(token == "Circle") {
+                if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
+                double radius = _scanner->nextDouble();
+                if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
+                // std::cout << "Build Circle" << std::endl;
+                _builder->buildCircle(radius); // 1 double
             }
-            catch(std::string e) {
-                if(e=="Scanning Is Done!");
-                break;
+            else if(token == "Rectangle") {
+                if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
+                double length = _scanner->nextDouble();
+                double width = _scanner->nextDouble();
+                if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
+                // std::cout << "Build Rectangle" << std::endl;
+                _builder->buildRectangle(length, width);
+            }
+            else if(token == "Triangle") {
+                if(_scanner->next() != "(") { throw std::string("Invalid input !"); }
+                if(_scanner->next() != "[") { throw std::string("Invalid input !"); }
+                double x1 = _scanner->nextDouble();
+                if(_scanner->next() != ",") { throw std::string("Invalid input !"); }
+                double y1 = _scanner->nextDouble();
+                if(_scanner->next() != "]") { throw std::string("Invalid input !"); }
+                if(_scanner->next() != "[") { throw std::string("Invalid input !"); }
+                double x2 = _scanner->nextDouble();
+                if(_scanner->next() != ",") { throw std::string("Invalid input !"); }
+                double y2 = _scanner->nextDouble();
+                if(_scanner->next() != "]") { throw std::string("Invalid input !"); }
+                if(_scanner->next() != ")") { throw std::string("Invalid input !"); }
+                // std::cout << "Build Triangle" << std::endl;
+                _builder->buildTriangle(x1, y1, x2, y2);
+            }
+            else if(token == "CompoundShape") {
+                if(_scanner->next() != "{") { throw std::string("Invalid input !"); }
+                // std::cout << "Build CompoundShape Begin" << std::endl;
+                _builder->buildCompoundBegin();
+            }
+            else if(token == "}") {
+                // std::cout << "Build CompoundShape End" << std::endl;
+                _builder->buildCompoundEnd();
             }
         }
     }

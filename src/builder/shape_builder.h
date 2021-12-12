@@ -1,7 +1,11 @@
 #pragma once
 
 #include <stack>
-#include "../shape.h"
+#include "../circle.h"
+#include "../rectangle.h"
+#include "../triangle.h"
+#include "../two_dimensional_vector.h"
+#include "../compound_shape.h"
 
 class ShapeBuilder {
 public:
