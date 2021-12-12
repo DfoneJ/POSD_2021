@@ -11,7 +11,13 @@ TEST(CaseScanner, Circle) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
+    }
+    try {
+        scanner->nextDouble();
+    }
+    catch (std::string e) {
+        ASSERT_EQ("No more doubles.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;
@@ -29,7 +35,7 @@ TEST(CaseScanner, Rectangle) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;
@@ -55,7 +61,7 @@ TEST(CaseScanner, Triangle) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;
@@ -71,7 +77,7 @@ TEST(CaseScanner, EmptyCompound) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;
@@ -109,7 +115,7 @@ TEST(CaseScanner, SimpleCompound) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;
@@ -172,7 +178,13 @@ TEST(CaseScanner, ComplexCompound) {
         scanner->next();
     }
     catch (std::string e) {
-        ASSERT_EQ("Scanning Is Done!", e);
+        ASSERT_EQ("No more token.", e);
+    }
+    try {
+        scanner->nextDouble();
+    }
+    catch (std::string e) {
+        ASSERT_EQ("No more doubles.", e);
     }
     ASSERT_TRUE(scanner->isDone());
     delete scanner;

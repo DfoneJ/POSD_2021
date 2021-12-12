@@ -3,65 +3,86 @@
 #include <vector>
 #include <exception>
 #include <string>
+#include <algorithm>
 #include <iostream>
 
 class Scanner {
 public:
-    Scanner(std::string input): _input(input) {}
-
-    std::string next() {  // 預設不會是空input, 一定會有一個以上的 token
-        if(isDone()) { throw std::string("Scanning Is Done!"); }
-        std::string result ="";
-        int nearestPos = _input.length();
-        int tokenIdx = -1;
-        for(std::string token : tokenList) { // scan every token
-            if(_input.find(token,pos)!=std::string::npos) { //- check token exist
+    Scanner(std::string input): _input(input) {
+        std::string result = "";
+        int endpos = _input.length();
+        int nearestPos;
+        int tokenIdx;
+        while(pos<endpos) {
+            nearestPos = endpos;
+            tokenIdx = -1;
+            result = "";
+            for(std::string token : tokenList) { // scan every token
+                if(_input.find(token,pos)!=std::string::npos) { //- check token exist
                 tokenIdx = _input.find(token,pos);
-                if(nearestPos>tokenIdx) {          //-- refresh nearest token
-                    nearestPos = tokenIdx;
-                    result = token;
+                    if(nearestPos>tokenIdx) {          //-- refresh nearest token
+                        nearestPos = tokenIdx;
+                        result = token;
+                    }
                 }
+            } // got nearest token OR get no token
+            if(result != "") {
+                Tokens.push_back(result);
+                pos = nearestPos + result.length(); // refresh pos
+            }
+            else { pos = endpos; } // let find token end
+        } // find token end.
+        pos = 0;
+        result = "";
+        while(pos<endpos) {
+            skipNotNum(); // jump to nearest digit pos, OR end
+            result = "";
+            if(pos<endpos) {
+                while(isDigit(_input[pos])) {
+                    result += _input[pos];
+                    pos++;
+                    if(pos>=endpos) { break; }
+                } // met none-digit OR met the end
+                if(pos<(endpos-1)) { //- Case : we have two or more cahr remained.
+                    if(_input[pos]=='.' && isDigit(_input[pos+1])) { //-- Case : front one is dot & back one is digit
+                        result += _input[pos];
+                        pos++;
+                        while(isDigit(_input[pos])) {
+                            result += _input[pos];
+                            pos++;
+                            if(pos>=endpos) { break; }
+                        }
+                    }
+                }
+                Doubles.push_back(result);
             }
         }
-        pos = nearestPos + result.length(); // refresh pos
-        if(!hasNextToken()) pos = _input.length(); // if we dont have next token, then done
+        std::reverse(Tokens.begin(), Tokens.end());
+        std::reverse(Doubles.begin(), Doubles.end());
+    }
+
+    std::string next() {
+        if(Tokens.empty()) { throw std::string("No more token."); }
+        std::string result = Tokens.back();
+        Tokens.pop_back();
         return result;
     }
 
-    double nextDouble() { // 預設最少有一次正確資料
-        std::string result ="";
-        bool findDouble = false;
-        bool hasDot = false;
-        skipNotNum();
-        while(isDigit(_input[pos])) {
-            result += _input[pos];
-            pos++;
-        }
-        if(isDot(_input[pos]) && isDigit(_input[pos+1])) {
-            result += _input[pos];
-            pos++;
-        }
-        while(isDigit(_input[pos])) {
-            result += _input[pos];
-            pos++;
-        }
+    double nextDouble() {
+        if(Doubles.empty()) { throw std::string("No more doubles."); }
+        std::string result = Doubles.back();
+        Doubles.pop_back();
         return std::stod(result);
     }
 
-    bool isDone() { return pos>=_input.length(); }
+    bool isDone() { return (Tokens.empty())&&(Doubles.empty()); }
 
 private:
     const std::vector<std::string> tokenList = {"Circle", "Rectangle", "Triangle", "CompoundShape", "(", ")", "[", "]", "{", "}", ","};
-    const std::vector<std::string> DigitList = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    std::vector<std::string> Tokens = {};
+    std::vector<std::string> Doubles = {};
     std::string _input ="";
-    std::size_t pos = 0;
-    bool hasNextToken() {
-        for(std::string token : tokenList) {
-            if(_input.find(token,pos)>=0) return true;
-        }
-        return false;
-    }
-    void skipNotNum() { while(_input[pos]<'0'||_input[pos]>'9') pos++; }
-    bool isDot(char c) { return c=='.'; }
+    int pos = 0;
+    void skipNotNum() { while((_input[pos]<'0'||_input[pos]>'9') && pos<_input.length()) pos++; }
     bool isDigit(char c) { return c>='0' && c<='9'; }
 };

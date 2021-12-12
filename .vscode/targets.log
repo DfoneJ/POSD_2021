@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Thu Dec 09 13:48:14 2021
+# Make data base, printed on Fri Dec 10 19:44:39 2021
 
 # Variables
 
@@ -57,7 +57,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-24efa894-903b-46b1-bef4-8f4a3178e5f6-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-303790f7-b325-404b-b514-6ca137da16d2-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # makefile (from 'makefile', line 18)
@@ -83,7 +83,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8988_MMJJQXUOVOFYVBGK
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11612_JFOTMRLDQLQDJYCF
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -121,7 +121,8 @@ TEST = test/ut_compound_shape.h test/ut_circle.h test/ut_rectangle.h test/ut_tri
 # environment
 MAKELEVEL := 0
 # environment
-INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bi 
+n;
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -184,8 +185,7 @@ MAKEFILES :=
 LC_ALL = C
 # automatic
 ^F = $(notdir $^)
-# def 
-ault
+# default
 SUFFIXES := 
 # environment
 SYSTEMDRIVE = C:
@@ -202,7 +202,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 8988
+VSCODE_PID = 11612
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -215,10 +215,11 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # Directories
 
 # : could not be stat'd.
-# C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1637190634): 15 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1639120297): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639028689): 8 files, no impossibilities.
-# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639012895): 4 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1639135529): 8 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key  
+C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639012895): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1633488672): 128 files, no impossibilities.
@@ -226,7 +227,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1636544073): 171 files, no impossibilities.
 # C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin (key C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2021.2.3/bin, mtime 1638084331): 31 files, no impossibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1638164184): 13 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1639026308): 2844 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1639134007): 2844 files, no impossibilities.
 # C:\Users\JB\AppData\Roaming\npm (key C:/Users/JB/AppData/Roaming/npm, mtime 1638338547): 6 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
@@ -247,7 +248,8 @@ test/ut_circle.h:
 # Not a target:
 src/two_dimensional_vector.h:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification time never chec 
+ked.
 #  File has not been updated.
 
 # Not a target:
@@ -267,8 +269,7 @@ all: directories ut_main
 
 .PHONY: clean test
 #  Implicit rule search has not been done.
-#  Modif 
-ication time never checked.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -371,8 +372,8 @@ src/visitor/shape_visitor.h:
 #  File has not been updated.
 
 # Not a target:
-src/iterator/iterator.h 
-:
+src/iterator/iterator 
+.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -425,8 +426,7 @@ src/visitor/shape_info_visitor.h:
 
 # Not a target:
 src/compound_shape.h:
-#  Implicit rule sea 
-rch has not been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -446,7 +446,8 @@ directories:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has been updated.
+#  
+ File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
 # @ := directories
@@ -491,13 +492,13 @@ test/ut_two_dimensional_vector.h:
 
 # strcache buffers: 7 (6) / strings = 3395 / storage = 51146 B / avg = 15 B
 # current buf: size = 8174 B / used = 2151 B / count = 123 / avg = 17 B
-# other used: total 
- = 42972 B / count = 3272 / avg = 13 B
+# other used: tot 
+al = 42972 B / count = 3272 / avg = 13 B
 # other free: total = 49 B / max = 13 B / min = 4 B / avg = 8 B
 
 # strcache performance: lookups = 3457 / hit rate = 1%
 # hash-table stats:
 # Load=3395/8192=41%, Rehash=0, Collisions=1129/3457=33%
-# Finished Make data base on Thu Dec 09 13:48:14 2021
+# Finished Make data base on Fri Dec 10 19:44:39 2021
 
  
