@@ -10,18 +10,16 @@
 class ShapeParser{
 public:
     // `filePath` is a relative path of makefile
-    ShapeParser(std::string filePath) {
+    ShapeParser(std::string filePath) { //<----------------------------
         std::ifstream infile(filePath);
         std::string line;
         while (std::getline(infile, line)) _input += line;
         infile.close();
         _scanner = new Scanner(_input); // Scanner 負責幫忙 Parser 從檔案內容中抓到 tokens
-        _builder = new ShapeBuilder(); // Builder 負責讓 Parser 在 parse() 贖後可以依照抓到的 token 創造對應的形狀
     }
 
     ~ShapeParser() {
         delete _scanner;
-        delete _builder;
     }
 
     void parse() {
@@ -79,10 +77,14 @@ public:
         }
     }
 
-    Shape* getShape() { return _builder->getShape();}
+    Shape* getShape() { //<----------------------------
+        Shape* result = _builder->getShape();
+        _builder->reset();
+        return result;
+    }
 
 private:
     std::string _input ="";
     Scanner* _scanner;
-    ShapeBuilder* _builder;
+    ShapeBuilder* _builder = ShapeBuilder::getInstance();
 };

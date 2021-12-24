@@ -9,6 +9,13 @@
 
 class ShapeBuilder {
 public:
+    static ShapeBuilder* getInstance() {
+        static ShapeBuilder instance;
+        return &instance;
+    }
+
+    ~ShapeBuilder() { reset(); }
+
     void buildCircle(double radius) { _shapeStack.push(new Circle(radius)); } // Push Circle into stack
 
     void buildRectangle(double length, double width) { _shapeStack.push(new Rectangle(length, width)); } // Push Rectangle into stack
@@ -35,9 +42,28 @@ public:
         // Finishing the add Shapes of CompoundShape, still, the CompoundShape pointer is at the top of _shapeStack
     }
 
-    Shape* getShape() { return _shapeStack.top(); }  // There should be only 1 porinter of Shape, left in the stack, at the end !
+    Shape* getShape() {
+        if(!_shapeStack.empty()) {
+            Shape* result = _shapeStack.top();
+            _shapeStack.pop();
+            return result;
+        }
+        else {
+            Shape* Empty = nullptr;
+            return Empty;
+        }
+    }  // There should be only 1 porinter of Shape, left in the stack, at the end !
+
+    void reset() {
+        while(!_shapeStack.empty()) {
+            Shape* shape = _shapeStack.top();
+            _shapeStack.pop();
+            delete shape;
+        }
+    }
 
 private:
+    ShapeBuilder(){};
     std::stack<Shape*> _shapeStack; // A stack which contains pointers to Shape
     bool isCompound(Shape* s) { return  typeid(*s)==typeid(CompoundShape); }
     bool isNoneEmptyCompound(Shape* s) { return isCompound(s)&&!s->createIterator()->isDone(); }
