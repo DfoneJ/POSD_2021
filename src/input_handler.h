@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <fstream>
 #include <vector>
+#include <stack>
 #include <exception>
 
 #include "./builder/shape_builder.h"
@@ -32,4 +33,20 @@ class InputHandler {
     std::string _InvalidInsNum = "Invalid instruction number!\n";
     std::string _InvalidArgument = "Invalid argument!\n";
     std::vector<std::string> InvalidChar = {"<", ">", "/", "\\", ":", "?", "*", "\"", "|"};
+    void cleanBuffer(){
+        scanf("%*[^\n]");
+        scanf("%*c");
+    }
+    bool isDouble(std::string Arguement) {
+        bool hasDot = false;
+        if(Arguement[0]<'0' || Arguement[0]>'9') { return false; } // check dot is not in first position
+        for(char c : Arguement) {
+            if(c<'0' || c>'9') {
+                if(c!='.') { return false; }
+                else if(hasDot) { return false; }
+                else { hasDot=true; }
+            }
+        }
+        return true;
+    }
 };

@@ -6,18 +6,18 @@
 
 class Rectangle : public Shape {
     public:
-        Rectangle(double length, double width) {
-            if(length <=0 || width <=0) { throw std::string("edges of rectangle should larger than zero"); }
+        Rectangle(double width, double height) {
+            if(width <=0 || height <=0) { throw std::string("edges of rectangle should larger than zero"); }
             else{
-                _length = length;
                 _width = width;
-                sprintf(_info, "Rectangle (%.2lf %.2lf)", (round(_length*100))/100, (round(_width*100))/100 );
+                _height = height;
+                sprintf(_info, "Rectangle (%.2lf %.2lf)", (round(_width*100))/100, (round(_height*100))/100 );
             }
         }
 
-        double area() const override { return (_length*_width); } // 面積
+        double area() const override { return (_width*_height); } // 面積
 
-        double perimeter() const override { return 2*(_length+_width); } // 周長
+        double perimeter() const override { return 2*(_width+_height); } // 周長
 
         std::string info() const override { return _info; } // 資訊
 
@@ -30,6 +30,6 @@ class Rectangle : public Shape {
         void accept(ShapeVisitor* visitor) override { visitor->visitRectangle(this); } // 接受拜訪
 
     private:
-        double _length, _width;
+        double _width, _height;
         char _info[30];
 };
