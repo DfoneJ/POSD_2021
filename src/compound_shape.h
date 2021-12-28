@@ -31,7 +31,8 @@ public:
         for (Shape* s : _shapes) { 
             if (s->info() == "CompoundShape") s->deleteShape(shape);
         }
-        _shapes.remove(shape); //刪除成員
+        delete shape;
+        _shapes.remove(shape); //移除list中指向已刪除成員的指標
     }
 
     Iterator* createIterator() override { // Compound 迭代器

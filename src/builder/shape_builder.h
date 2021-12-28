@@ -65,6 +65,11 @@ public:
 private:
     ShapeBuilder(){};
     std::stack<Shape*> _shapeStack; // A stack which contains pointers to Shape
-    bool isCompound(Shape* s) { return  typeid(*s)==typeid(CompoundShape); }
-    bool isNoneEmptyCompound(Shape* s) { return isCompound(s)&&!s->createIterator()->isDone(); }
+    bool isCompound(Shape* s) { return s->info()=="CompoundShape"; }
+    bool isNoneEmptyCompound(Shape* s) {
+        Iterator* csit = s->createIterator();
+        bool done = csit->isDone();
+        delete csit;
+        return isCompound(s)&&!done;
+    }
 };

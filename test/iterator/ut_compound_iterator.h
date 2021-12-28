@@ -11,7 +11,6 @@ TEST(CaseCompoundIterator, CurrentItem) {
     Iterator* csit = cs->createIterator();
     ASSERT_EQ(c, csit->currentItem());
     delete cs;
-    delete c;
     delete csit;
 }
 
@@ -26,8 +25,6 @@ TEST(CaseCompoundIterator, Next) {
     csit->next();
     ASSERT_EQ(c2, csit->currentItem());
     delete cs;
-    delete c1;
-    delete c2;
     delete csit;
 }
 
@@ -39,6 +36,5 @@ TEST(CaseCompoundIterator, IsDone) {
     csit->next();
     ASSERT_TRUE(csit->isDone());
     delete cs;
-    delete c;
     delete csit;
 }

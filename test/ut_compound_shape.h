@@ -40,8 +40,6 @@ TEST(CaseCompoundShape, AddShape) {
     csit->next();
     ASSERT_TRUE( csit->currentItem() == c2);
     delete cs;
-    delete c1;
-    delete c2;
     delete csit;
 }
 
@@ -57,7 +55,6 @@ TEST(CaseCompoundShape, DeleteShape) {
     ASSERT_EQ(std::string("P13CompoundShape"), typeid(cs).name());
     ASSERT_EQ(typeid(CompoundShape), typeid(*cs));
     delete cs;
-    delete c;
     delete csit1;
     delete csit2;
 }
