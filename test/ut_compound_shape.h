@@ -25,7 +25,8 @@ TEST(CaseCompoundShape, CreateIterator) {
     CompoundShape* cs = new CompoundShape();
     Iterator* csit = cs->createIterator();
     ASSERT_TRUE(csit->isDone());
-    delete csit, cs;
+    delete csit;
+    delete cs;
 }
 
 TEST(CaseCompoundShape, AddShape) {
@@ -38,7 +39,10 @@ TEST(CaseCompoundShape, AddShape) {
     ASSERT_TRUE( csit->currentItem() == c1);
     csit->next();
     ASSERT_TRUE( csit->currentItem() == c2);
-    delete cs, c1, c2, csit;
+    delete cs;
+    delete c1;
+    delete c2;
+    delete csit;
 }
 
 TEST(CaseCompoundShape, DeleteShape) {
@@ -52,5 +56,8 @@ TEST(CaseCompoundShape, DeleteShape) {
     ASSERT_TRUE( csit2->isDone());
     ASSERT_EQ(std::string("P13CompoundShape"), typeid(cs).name());
     ASSERT_EQ(typeid(CompoundShape), typeid(*cs));
-    delete cs, c, csit1, csit2;
+    delete cs;
+    delete c;
+    delete csit1;
+    delete csit2;
 }

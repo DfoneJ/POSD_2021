@@ -16,12 +16,12 @@ public:
     void visitTriangle(Triangle* triangle) override { result = triangle->info()+std::string("\n"); }
 
     void visitCompoundShape(CompoundShape* compoundShape) {
-        clean_CompoundResult();
+        CompoundResult="";
         CompoundResult = CompoundResult + compoundShape->info() + std::string(" {\n");
         Iterator* csit = compoundShape->createIterator();
         _depth += 1;
         for (csit->first(); !csit->isDone(); csit->next()) {
-            addIndent();
+            for (int i=0; i<_depth; i++) CompoundResult += std::string("  ");
             if (csit->currentItem()->info()=="CompoundShape") {
                 previous_content += CompoundResult;
                 csit->currentItem()->accept(this);
@@ -33,12 +33,13 @@ public:
         }
         delete csit;
         _depth -= 1;
-        addIndent();
-        previous_content = previous_content + CompoundResult + "}\n";
-        clean_CompoundResult();
+        for (int i=0; i<_depth; i++) CompoundResult += std::string("  ");
+        CompoundResult += "}\n";
+        previous_content += CompoundResult;
+        CompoundResult="";
         if (_depth==0) {
             result = previous_content;
-            clean_Previous_Content();
+            previous_content="";
         }
     }
     //CompoundShape{\n  Circle (12.35)\n  CompoundShape{\n    Circle (1.10)\n    Rectangle (3.14 4.00)\n  }\n}\n
@@ -50,7 +51,4 @@ private:
     std::string result = "";
     std::string CompoundResult = "";
     std::string previous_content = "";
-    void clean_CompoundResult() { CompoundResult=""; }
-    void clean_Previous_Content() { previous_content=""; }
-    void addIndent() { for (int i=0; i<_depth; i++) CompoundResult += std::string("  "); }
 };

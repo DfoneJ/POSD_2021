@@ -5,7 +5,8 @@ TEST(CaseInfoVisitor, VisitCircle) {
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     c->accept(visitor);
     ASSERT_EQ(visitor->getResult(), "Circle (12.35)\n");
-    delete c, visitor;
+    delete c;
+    delete visitor;
 }
 
 TEST(CaseInfoVisitor, VisitRectangle) {
@@ -13,7 +14,8 @@ TEST(CaseInfoVisitor, VisitRectangle) {
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     rect->accept(visitor);
     ASSERT_EQ(visitor->getResult(), "Rectangle (3.00 4.00)\n");
-    delete rect, visitor;
+    delete rect;
+    delete visitor;
 }
 
 TEST(CaseInfoVisitor, VisitTriangle) {
@@ -23,7 +25,8 @@ TEST(CaseInfoVisitor, VisitTriangle) {
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     tri->accept(visitor);
     ASSERT_EQ(visitor->getResult(), "Triangle ([3.00,0.00] [0.00,4.00])\n");
-    delete tri, visitor;
+    delete tri;
+    delete visitor;
 }
 
 TEST(CaseInfoVisitor, VisitOneLevelCompound) {
@@ -35,7 +38,10 @@ TEST(CaseInfoVisitor, VisitOneLevelCompound) {
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     cs->accept(visitor);
     ASSERT_EQ(visitor->getResult(), "CompoundShape {\n  Circle (2.00)\n  Circle (1.00)\n}\n");
-    delete cs, c1, c2, visitor;
+    delete cs;
+    delete c1;
+    delete c2;
+    delete visitor;
 }
 
 TEST(CaseInfoVisitor, VisitTwoLevelCompound) {
@@ -51,5 +57,10 @@ TEST(CaseInfoVisitor, VisitTwoLevelCompound) {
     ShapeInfoVisitor* visitor = new ShapeInfoVisitor();
     cs2->accept(visitor);
     ASSERT_EQ(visitor->getResult(), "CompoundShape {\n  Circle (12.35)\n  CompoundShape {\n    Circle (1.10)\n    Rectangle (3.14 4.00)\n  }\n}\n");
-    delete cs1, c1, rect, cs2, c2, visitor;
+    delete cs1;
+    delete c1;
+    delete rect;
+    delete cs2;
+    delete c2;
+    delete visitor;
 }

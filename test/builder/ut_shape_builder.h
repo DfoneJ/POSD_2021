@@ -4,6 +4,7 @@ TEST(CaseBuilder, Creatiom) {
     ShapeBuilder* builder = ShapeBuilder::getInstance();
     Shape* result = builder->getShape();
     ASSERT_TRUE(result==nullptr);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildCircle) {
@@ -11,6 +12,7 @@ TEST(CaseBuilder, BuildCircle) {
     builder->buildCircle(1.0);
     Shape* result = builder->getShape();
     ASSERT_NEAR(1*1*M_PI, result->area(), 0.001);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildRectangle) {
@@ -18,6 +20,7 @@ TEST(CaseBuilder, BuildRectangle) {
     builder->buildRectangle(3.0,4.0);
     Shape* result = builder->getShape();
     ASSERT_NEAR(3*4, result->area(), 0.001);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildTriangle) {
@@ -25,6 +28,7 @@ TEST(CaseBuilder, BuildTriangle) {
     builder->buildTriangle(3,0,0,4);
     Shape* result = builder->getShape();
     ASSERT_NEAR(3*4/2, result->area(), 0.001);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildEmptyCompound) {
@@ -33,6 +37,7 @@ TEST(CaseBuilder, BuildEmptyCompound) {
     builder->buildCompoundEnd();
     Shape* result = builder->getShape();
     ASSERT_NEAR(0, result->area(), 0.001);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildSimpleCompound) {
@@ -44,6 +49,7 @@ TEST(CaseBuilder, BuildSimpleCompound) {
     builder->buildCompoundEnd();
     Shape* result = builder->getShape();
     ASSERT_NEAR(1*1*M_PI + 3.14*4 + 3*4/2, result->area(), 0.001);
+    delete result;
 }
 
 TEST(CaseBuilder, BuildComplexCompound) {
@@ -57,4 +63,5 @@ TEST(CaseBuilder, BuildComplexCompound) {
     builder->buildCompoundEnd();
     Shape* result = builder->getShape();
     ASSERT_NEAR((1*1*M_PI)+(3*4)+(3*4/2), result->area(), 0.001);
+    delete result;
 }

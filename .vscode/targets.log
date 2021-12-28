@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Mon Dec 27 17:02:20 2021
+# Make data base, printed on Tue Dec 28 10:28:04 2021
 
 # Variables
 
@@ -59,7 +59,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2a607dfd-4862-4c0b-bc96-1c1353fe69de-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-a9672e94-929c-434e-87ba-ea04d8ed18d3-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # makefile (from 'makefile', line 18)
@@ -85,7 +85,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5948_VLUFVWDFJJKGHKIZ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_25484_LRGTVLOJWFTFMQTJ
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -123,7 +123,8 @@ TEST = test/ut_compound_shape.h test/ut_circle.h test/ut_rectangle.h test/ut_tri
 # environment
 MAKELEVEL := 0
 # environment
-INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\ 
+IntelliJ IDEA Community Edition 2021.2.3\bin;
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -159,8 +160,7 @@ VSCODE_IPC_HOOK = \\.\pipe\ca6ab60109bf24a64d9a1b9abde688bf-1.63.2-main-sock
 # environment
 HOMEPATH = \Users\JB
 # environment
-COMMONPROGRAMFILES(X86)  
-= C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 PROMPT = $P$G
 # environment
@@ -204,7 +204,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 5948
+VSCODE_PID = 25484
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -212,6 +212,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 
 # Pattern-specific Variable Values
 
+ 
 # No pattern-specific variable values.
 
 # Directories
@@ -219,9 +220,8 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # : could not be stat'd.
 # C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1639461367): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1640462439): 8 files, no impossibilities.
-# C:\Users\JB\AppDat 
-a\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639913278): 4 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1640657534): 9 files, no impossibilities.
+# C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639913278): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1633488672): 128 files, no impossibilities.
@@ -233,7 +233,7 @@ a\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/M
 # C:\Users\JB\AppData\Roaming\npm (key C:/Users/JB/AppData/Roaming/npm, mtime 1638338547): 6 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1631251757): 12 files, no impossibilities.
 
-# 3398 files, no impossibilities in 15 directories.
+# 3399 files, no impossibilities in 15 directories.
 
 # Implicit Rules
 
@@ -249,7 +249,8 @@ test/ut_circle.h:
 
 # Not a target:
 src/two_dimensional_vector.h:
-#  Implicit rule search has not been done.
+#  Implicit rule search has  
+not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -308,8 +309,7 @@ test: all
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to 
- execute (from 'makefile', line 38):
+#  recipe to execute (from 'makefile', line 38):
 	bin/ut_all
 
 # Not a target:
@@ -351,7 +351,8 @@ test/ut_compound_shape.h:
 
 # Not a target:
 test/visitor/ut_shape_info_visitor.h:
-#  Implicit rule search has not been done.
+#  Implicit rule sea 
+rch has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -403,7 +404,8 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 35):
+#  recipe to execute (fr 
+om 'makefile', line 35):
 	rm -rf bin
 	
 
@@ -426,8 +428,7 @@ test/ut_rectangle.h:
 #  File has not been updated.
 
 # Not a target:
-test/iterator/ut_c 
-ompound_iterator.h:
+test/iterator/ut_compound_iterator.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -497,8 +498,8 @@ directories:
 	mkdir -p bin
 
 # Not a target:
-src/builder/sha 
-pe_builder.h:
+src/builder/s 
+hape_builder.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -517,14 +518,14 @@ test/ut_two_dimensional_vector.h:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3405 / storage = 51284 B / avg = 15 B
-# current buf: size = 8174 B / used = 2282 B / count = 132 / avg = 17 B
-# other used: total = 43110 B / count = 3273 / avg = 13 B
-# other free: total = 42 B / max = 13 B / min = 3 B / avg = 7 B
+# strcache buffers: 7 (6) / strings = 3406 / storage = 51309 B / avg = 15 B
+# current buf: size = 8174 B / used = 2305 B / count = 133 / avg = 17 B
+# other used: total = 43135 B / count = 3273 / avg = 13 B
+# other free: total = 40 B / max = 13 B / min = 3 B / avg = 6 B
 
-# strcache performance: lookups = 3483 / hit rate = 2%
+# strcache performance: lookups = 3484 / hit rate = 2%
 # hash-table stats:
-# Load=3405/8192=42%, Rehash=0, Collisions=1142/3483=33%
-# Finished Make data base on Mon Dec 27 17:02:20 2021
+# Load=3406/8192=42%, Rehash=0, Collisions=1142/3484=33%
+# Finished Make data base on Tue Dec 28 10:28:04 2021
 
  
