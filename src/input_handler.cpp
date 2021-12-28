@@ -52,9 +52,9 @@ void InputHandler::handleEditorInstructions(int instruction) {
     }
 }
 
-void InputHandler::save() { // <-------------------------------------------------
+void InputHandler::save() {
     std::cout << "Please enter the file name to save the shape:\n";
-    char temp[120];
+    char temp[120]="";
     scanf("%115[^\n]", temp);
     if(getchar()!='\n') { cleanBuffer(); }
     std::string FileName = temp;
