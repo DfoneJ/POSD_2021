@@ -4,18 +4,24 @@
 #include "../../src/rectangle.h"
 #include "../../src/triangle.h"
 
-TEST(CaseCompoundIterator, CurrentItem) {
-    CompoundShape* cs = new CompoundShape();
+class CaseCompoundIterator : public ::testing::Test {
+protected:
+    void SetUp() override { cs = new CompoundShape(); }
+
+    void TearDown() override { delete cs; }
+
+    CompoundShape* cs;
+};
+
+TEST_F(CaseCompoundIterator, CurrentItem) {
     Circle* c = new Circle(1.0);
     cs->addShape(c);
     Iterator* csit = cs->createIterator();
     ASSERT_EQ(c, csit->currentItem());
-    delete cs;
     delete csit;
 }
 
-TEST(CaseCompoundIterator, Next) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundIterator, Next) {
     Circle* c1 = new Circle(1.0);
     Circle* c2 = new Circle(2.0);
     cs->addShape(c1);
@@ -24,17 +30,14 @@ TEST(CaseCompoundIterator, Next) {
     ASSERT_EQ(c1, csit->currentItem());
     csit->next();
     ASSERT_EQ(c2, csit->currentItem());
-    delete cs;
     delete csit;
 }
 
-TEST(CaseCompoundIterator, IsDone) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundIterator, IsDone) {
     Circle* c = new Circle(1.0);
     cs->addShape(c);
     Iterator* csit = cs->createIterator();
     csit->next();
     ASSERT_TRUE(csit->isDone());
-    delete cs;
     delete csit;
 }

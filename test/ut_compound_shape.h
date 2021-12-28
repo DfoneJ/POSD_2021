@@ -3,34 +3,34 @@
 #include "../src/rectangle.h"
 #include "../src/triangle.h"
 
-TEST(CaseCompoundShape, Area) {
-    CompoundShape* cs = new CompoundShape();
+class CaseCompoundShape : public ::testing::Test {
+protected:
+    void SetUp() override { cs = new CompoundShape(); }
+
+    void TearDown() override { delete cs; }
+
+    CompoundShape* cs;
+};
+
+TEST_F(CaseCompoundShape, Area) {
     ASSERT_NEAR(cs->area(), 0, 0.001);
-    delete cs;
 }
 
-TEST(CaseCompoundShape, Perimeter) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundShape, Perimeter) {
     ASSERT_NEAR(cs->perimeter(), 0, 0.001);
-    delete cs;
 }
 
-TEST(CaseCompoundShape, Info) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundShape, Info) {
     ASSERT_EQ(cs->info(), "CompoundShape");
-    delete cs;
 }
 
-TEST(CaseCompoundShape, CreateIterator) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundShape, CreateIterator) {
     Iterator* csit = cs->createIterator();
     ASSERT_TRUE(csit->isDone());
     delete csit;
-    delete cs;
 }
 
-TEST(CaseCompoundShape, AddShape) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundShape, AddShape) {
     Circle* c1 = new Circle(2.0);
     Circle* c2 = new Circle(1.0);
     cs->addShape(c1);
@@ -39,12 +39,10 @@ TEST(CaseCompoundShape, AddShape) {
     ASSERT_TRUE( csit->currentItem() == c1);
     csit->next();
     ASSERT_TRUE( csit->currentItem() == c2);
-    delete cs;
     delete csit;
 }
 
-TEST(CaseCompoundShape, DeleteShape) {
-    CompoundShape* cs = new CompoundShape();
+TEST_F(CaseCompoundShape, DeleteShape) {
     Circle* c = new Circle(2.0);
     cs->addShape(c);
     Iterator* csit1 = cs->createIterator(); // 新增circle後的內容
@@ -54,7 +52,6 @@ TEST(CaseCompoundShape, DeleteShape) {
     ASSERT_TRUE( csit2->isDone());
     ASSERT_EQ(std::string("P13CompoundShape"), typeid(cs).name());
     ASSERT_EQ(typeid(CompoundShape), typeid(*cs));
-    delete cs;
     delete csit1;
     delete csit2;
 }

@@ -1,40 +1,41 @@
 #include "../../src/iterator/null_iterator.h"
 
-TEST(CaseNullIterator, First) {
-    Iterator* nit = new NullIterator();
+class CaseNullIterator : public ::testing::Test {
+protected:
+    void SetUp() override { nit = new NullIterator(); }
+
+    void TearDown() override { delete nit; }
+
+    Iterator* nit;
+};
+
+TEST_F(CaseNullIterator, First) {
     try {
         nit->first();
     }
     catch(std::string e) {
         ASSERT_EQ(e,std::string("Already met the end !"));
     }
-    delete nit;
 }
 
-TEST(CaseNullIterator, CurrentItem) {
-    Iterator* nit = new NullIterator();
+TEST_F(CaseNullIterator, CurrentItem) {
     try {
         nit->currentItem();
     }
     catch(std::string e) {
         ASSERT_EQ(e,std::string("Already met the end !"));
     }
-    delete nit;
 }
 
-TEST(CaseNullIterator, Next) {
-    Iterator* nit = new NullIterator();
+TEST_F(CaseNullIterator, Next) {
     try {
         nit->next();
     }
     catch(std::string e) {
         ASSERT_EQ(e,std::string("Already met the end !"));
     }
-    delete nit;
 }
 
-TEST(CaseNullIterator, IsDone) {
-    Iterator* nit = new NullIterator();
+TEST_F(CaseNullIterator, IsDone) {
     ASSERT_TRUE(nit->isDone());
-    delete nit;
 }
