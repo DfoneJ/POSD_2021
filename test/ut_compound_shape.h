@@ -54,4 +54,5 @@ TEST_F(CaseCompoundShape, DeleteShape) {
     ASSERT_EQ(typeid(CompoundShape), typeid(*cs));
     delete csit1;
     delete csit2;
+    delete c;
 }

@@ -31,7 +31,6 @@ public:
         for (Shape* s : _shapes) { 
             if (s->info() == "CompoundShape") s->deleteShape(shape);
         }
-        delete shape;
         _shapes.remove(shape); //移除list中指向已刪除成員的指標
     }
 
