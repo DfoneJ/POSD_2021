@@ -14,8 +14,10 @@ public:
         P_result = P_result + " " + p->getText() + "\n"; // # title
         Iterator* pit = p->createIterator();
         for(pit->first(); !pit->isDone(); pit->next()) {
-            
+            pit->currentItem()->accept(this);
+            P_result += this.getResult;
         }
+        _result = P_result;
     }
 
     std::string getResult() const override { return _result; }
