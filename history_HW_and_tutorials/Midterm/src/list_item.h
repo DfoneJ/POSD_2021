@@ -1,30 +1,24 @@
 #pragma once
 
-#include <stdio.h>
-#include <exception>
 #include "article.h"
-//#include "iterator/null_iterator.h"
+#include "iterator/null_iterator.h"
 #include "visitor/article_visitor.h"
 
 class ListItem : public Article {
     public:
-        ListItem(std::string text) { _text = text; }
+        ListItem(std::string text) { _text = text; } // OK
 
         ~ListItem() {}
 
-        std::string getText() const override { return _text; }
+        std::string getText() const override { return _text; } // OK
 
-        std::string getFullText() const override { return "- " + _text; }
+        int getLevel() const override { return 0; } // OK
 
-        std::string getHtmlText() const override { return "<li>" + _text + "</li>"; } //<li>list1</li>
+        Iterator* createIterator() override { return new NullIterator(); } // OK
 
-        int getLevel() const override { return 0; }
+        void accept(ArticleVisitor* visitor) override { visitor->visitListItem(this); } // OK
 
-        //Iterator* createIterator() override {/* return new NullIterator(); */}
-
-        void accept(ArticleVisitor* visitor) override { visitor->visitListItem(this); } // DO
-
-        void add(Article* dpFormat) override { throw std::string("ListItem cannot do add!"); }
+        void add(Article* dpFormat) override { throw std::string("ListItem cannot do add!"); } // OK
     private:
         std::string _text=""; 
 };

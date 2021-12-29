@@ -1,9 +1,8 @@
 #include "../src/text.h"
 #include "../src/list_item.h"
 #include "../src/paragraph.h"
-#include <typeinfo>
 
-TEST(CaseParagraph, CreatZeroLevel){
+TEST(CaseParagraph, CreatZeroLevel) {
     try{
         Paragraph p(0,"title_0");
         FAIL();
@@ -13,7 +12,7 @@ TEST(CaseParagraph, CreatZeroLevel){
     }
 }
 
-TEST(CaseParagraph, CreatSevenLevel){
+TEST(CaseParagraph, CreatSevenLevel) {
     try{
         Paragraph p(7,"title_7");
         FAIL();
@@ -21,11 +20,6 @@ TEST(CaseParagraph, CreatSevenLevel){
     catch(std::string e){
         ASSERT_EQ(std::string("level cannot greater than 6"), e);
     }
-}
-
-TEST(CaseParagraph, Create){
-    Paragraph p(1,"title_1");
-    EXPECT_EQ(std::string("9Paragraph"),typeid(p).name());
 }
 
 TEST(CaseParagraph, GetLevel){
@@ -38,17 +32,6 @@ TEST(CaseParagraph, GetText){
     ASSERT_EQ(std::string("title_1"),p.getText());
 }
 
-TEST(CaseParagraph, GetFullText){
-    Paragraph p(1,"title_1");
-    ASSERT_EQ(std::string("# title_1"),p.getFullText());
-}
-
-TEST(CaseParagraph, GetHtmlText){
-    Paragraph p(1,"title_1");
-    ASSERT_EQ(std::string("<div><h1>title_1</h1></div>"),p.getHtmlText());
-}
-
-
 TEST(CaseParagraph, AddFail){
     Paragraph p2(2, "title1");
     Paragraph* p1 = new Paragraph(1, "title2");
@@ -57,21 +40,16 @@ TEST(CaseParagraph, AddFail){
         FAIL();
     }
     catch(std::string e){
-        EXPECT_EQ(std::string("cannot add smaller or equal level paragraph!"),e);
+        EXPECT_EQ(std::string("Invalid level!"),e);
     }
     delete p1;
 }
 
 TEST(CaseParagraph, Add){
     Paragraph p(1, "title");
-    p.add(new ListItem("list1"));
-    p.add(new ListItem("list2"));
-    p.add(new Text("text"));
-    Paragraph* p2 = new Paragraph(2, "title2");
-    p2->add(new ListItem("list3"));
-    p2->add(new ListItem("list4"));
-    p2->add(new Text("sub text"));
-    p.add(p2);
-    ASSERT_EQ(std::string("# title\n- list1\n- list2\ntext\n## title2\n- list3\n- list4\nsub text"),p.getFullText());
-    delete p2;
+    Text* atx = new Text("added_text");
+    ListItem* alit = new ListItem("added_listitem");
+    p.add(atx);
+    p.add(alit);
+    // should have no exception
 }

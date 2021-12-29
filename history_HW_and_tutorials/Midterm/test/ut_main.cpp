@@ -12,3 +12,5 @@ int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+// sudo apt-get install valgrind
+// valgrind --leak-check=full bin/ut_all

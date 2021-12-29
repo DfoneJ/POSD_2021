@@ -1,16 +1,14 @@
 #pragma once
 
 #include "iterator.h"
-#include <stdio.h>
-#include <exception>
 
 class NullIterator : public Iterator {
    public:
-    void first() override {throw std::string("nulptr has no first()!");}
+    void first() override {throw std::string("nulptr has no first()!");} // OK
 
-    Article* currentItem() const override {throw std::string("nulptr has no currentItem()!");}
+    Article* currentItem() const override {throw std::string("nulptr has no currentItem()!");} // OK
 
-    void next() override {throw std::string("nulptr has no next()!");}
+    void next() override {throw std::string("nulptr has no next()!");} // OK
 
-    bool isDone() const override {return true;}
+    bool isDone() const override {return true;} // OK
 };

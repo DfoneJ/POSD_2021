@@ -1,9 +1,12 @@
 #pragma once
 
-#include "../article.h"
+#include <exception>
+#include <string>
+
+class Article;
 
 class Iterator {
-   public:
+public:
     virtual ~Iterator(){};
 
     virtual void first() = 0;

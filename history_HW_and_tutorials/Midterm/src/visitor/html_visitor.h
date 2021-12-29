@@ -4,11 +4,11 @@
 
 class HtmlVisitor : public ArticleVisitor {
 public:
-    void visitListItem(ListItem* li) override{ _result = li->getHtmlText(); }
+    void visitListItem(ListItem* li) override{ _result = li->getText(); }
 
-    void visitText(Text* t) override{ _result = t->getHtmlText(); }
+    void visitText(Text* t) override{ _result = t->getText(); }
 
-    void visitParagraph(Paragraph* p) override{ _result = p->getHtmlText(); }
+    void visitParagraph(Paragraph* p) override{ _result = p->getText(); }
 
     std::string getResult() const override { return _result; }
 private:
