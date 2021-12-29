@@ -11,7 +11,7 @@ public:
 
     void visitParagraph(Paragraph* p) override {
         std::string P_result="";
-        P_result = P_result + "<h" + str(p->getLevel) + ">" + "</h" + str(p->getLevel) + ">";
+        P_result = P_result + "<h>" + p->getText + "</h>";
         Iterator* pit = p->createIterator();
         for(pit->first(); !pit->isDone(); pit->next()) {
             pit->currentItem()->accept(this);

@@ -1,6 +1,7 @@
 #include "../src/text.h"
 #include "../src/list_item.h"
 #include "../src/paragraph.h"
+#include <string>
 
 TEST(CaseParagraph, CreatZeroLevel) {
     try{
@@ -25,6 +26,7 @@ TEST(CaseParagraph, CreatSevenLevel) {
 TEST(CaseParagraph, GetLevel){
     Paragraph p(1,"title_1");
     ASSERT_EQ(1,p.getLevel());
+    std::cout << str(p.getLevel()) << std::endl;
 }
 
 TEST(CaseParagraph, GetText){
