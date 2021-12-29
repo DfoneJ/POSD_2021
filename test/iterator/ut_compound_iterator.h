@@ -1,43 +1,41 @@
 #include "../../src/iterator/compound_iterator.h"
-#include "../../src/compound_shape.h"
-#include "../../src/circle.h"
-#include "../../src/rectangle.h"
-#include "../../src/triangle.h"
+#include "../../src/text.h"
+#include "../../src/list_item.h"
+#include "../../src/paragraph.h"
 
-class CaseCompoundIterator : public ::testing::Test {
-protected:
-    void SetUp() override { cs = new CompoundShape(); }
-
-    void TearDown() override { delete cs; }
-
-    CompoundShape* cs;
-};
-
-TEST_F(CaseCompoundIterator, CurrentItem) {
-    Circle* c = new Circle(1.0);
-    cs->addShape(c);
-    Iterator* csit = cs->createIterator();
-    ASSERT_EQ(c, csit->currentItem());
-    delete csit;
-}
-
-TEST_F(CaseCompoundIterator, Next) {
-    Circle* c1 = new Circle(1.0);
-    Circle* c2 = new Circle(2.0);
-    cs->addShape(c1);
-    cs->addShape(c2);
-    Iterator* csit = cs->createIterator();
-    ASSERT_EQ(c1, csit->currentItem());
-    csit->next();
-    ASSERT_EQ(c2, csit->currentItem());
-    delete csit;
-}
-
-TEST_F(CaseCompoundIterator, IsDone) {
-    Circle* c = new Circle(1.0);
-    cs->addShape(c);
-    Iterator* csit = cs->createIterator();
-    csit->next();
-    ASSERT_TRUE(csit->isDone());
-    delete csit;
+TEST(CaseCompoundIterator, ParagraphIterator) {
+    Paragraph p(1, "title");
+    p.add(new ListItem("list1"));
+    p.add(new ListItem("list2"));
+    p.add(new Text("text"));
+    Paragraph* p2 = new Paragraph(2, "title2");
+    p2->add(new ListItem("list3"));
+    p2->add(new ListItem("list4"));
+    p2->add(new Text("sub text"));
+    p.add(p2);
+    Iterator* pit = p.createIterator();
+    ASSERT_EQ(pit->isDone(), false);
+    ASSERT_EQ(pit->currentItem()->getText(), "list1");
+    pit->next();
+    ASSERT_EQ(pit->currentItem()->getText(), "list2");
+    pit->next();
+    ASSERT_EQ(pit->currentItem()->getText(), "text");
+    pit->next();
+    ASSERT_EQ(pit->currentItem()->getText(), "title2");
+    ASSERT_EQ(pit->isDone(), false);
+    pit->next();
+    ASSERT_TRUE(pit->isDone());
+    try {
+        pit->currentItem();
+        FAIL();
+    }catch (std::string e) {
+        ASSERT_EQ(e, "Already met the end !");
+    }
+    try {
+        pit->next();
+        FAIL();
+    }catch (std::string e) {
+        ASSERT_EQ(e, "Already met the end !");
+    }
+    delete pit;
 }

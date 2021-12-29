@@ -1,32 +1,28 @@
 .PHONY: clean test
 
-TEST= test/ut_compound_shape.h test/ut_circle.h test/ut_rectangle.h \
-	  test/ut_triangle.h test/ut_two_dimensional_vector.h \
-	  test/iterator/ut_null_iterator.h test/iterator/ut_compound_iterator.h \
-	  test/visitor/ut_shape_info_visitor.h \
-	  test/builder/ut_shape_builder.h test/builder/ut_shape_parser.h \
-	  test/builder/ut_scanner.h
+all: directories ut_main
 
-SHAPE= src/shape.h src/rectangle.h src/circle.h src/triangle.h \
-	   src/two_dimensional_vector.h src/compound_shape.h
+TEST= test/ut_paragraph.h test/ut_list_item.h test/ut_text.h \
+	  test/iterator/ut_compound_iterator.h test/iterator/ut_null_iterator.h \
+	  test/visitor/ut_markdown_visitor.h test/visitor/ut_html_visitor.h \
+	  test/builder/ut_article_builder.h test/builder/ut_article_parser.h \
+	  test/builder/ut_article_scanner.h
 
-ITERATOR= src/iterator/iterator.h src/iterator/null_iterator.h \
-		  src/iterator/compound_iterator.h
+ARTICLE= src/article.h src/list_item.h src/paragraph.h src/text.h
 
-VISITOR= src/visitor/shape_visitor.h src/visitor/shape_info_visitor.h
+ITERATOR= src/iterator/iterator.h src/iterator/compound_iterator.h \
+	 	  src/iterator/null_iterator.h
 
-BUILDER= src/builder/shape_builder.h src/builder/shape_parser.h \
-		 src/builder/scanner.h
+VISITOR= src/visitor/article_visitor.h src/visitor/html_visitor.h \
+		 src/visitor/markdown_visitor.h
 
-SRC= $(SHAPE) $(ITERATOR) $(VISITOR) $(BUILDER)
+BUILDER= src/builder/article_builder.h src/builder/article_parser.h \
+		 src/builder/article_scanner.h
 
-all: directories ut_main main
+SRC= $(ARTICLE) $(ITERATOR) $(VISITOR) $(BUILDER)	  
 
 ut_main: test/ut_main.cpp $(TEST) $(SRC)
-	g++ -std=c++17 -Wfatal-errors test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
-
-main: src/main.cpp src/input_handler.h src/input_handler.cpp $(SRC)
-	g++ -std=c++17 -Wfatal-errors src/input_handler.cpp src/main.cpp -o bin/main -lgtest -lpthread
+	g++ -std=c++11 test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
 
 directories:
 	mkdir -p bin

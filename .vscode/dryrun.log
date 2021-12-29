@@ -1,8 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make.exe: Entering directory 'c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW'
-mkdir -p bin
- 
-g++ -std=c++17 -Wfatal-errors test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
-g++ -std=c++17 -Wfatal-errors src/input_handler.cpp src/main.cpp -o bin/main -lgtest -lpthread
-make.exe: Leaving directory 'c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW'
- 

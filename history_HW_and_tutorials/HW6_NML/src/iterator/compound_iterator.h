@@ -9,13 +9,13 @@ class CompoundIterator : public Iterator {
 
     void first() override { _current = _begin; }
 
-    Article* currentItem() const override {
-        if(_current == _end) { throw std::string("Already met the end !"); }
+    Shape* currentItem() const override {
+        if(_current == _end) { throw "Already met the end !"; }
         else { return *_current; }
     }
 
     void next() override {
-        if(_current == _end) { throw std::string("Already met the end !"); }
+        if(_current == _end) { throw "Already met the end !"; }
         else { _current++; }
     }
 

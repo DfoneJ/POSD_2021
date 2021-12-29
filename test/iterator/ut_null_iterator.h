@@ -1,41 +1,43 @@
 #include "../../src/iterator/null_iterator.h"
 
-class CaseNullIterator : public ::testing::Test {
-protected:
-    void SetUp() override { nit = new NullIterator(); }
-
-    void TearDown() override { delete nit; }
-
-    Iterator* nit;
-};
-
-TEST_F(CaseNullIterator, First) {
-    try {
-        nit->first();
+TEST(CaseNullIterator, First) {
+    Iterator* it = new NullIterator();
+    try{
+        it->first();
+        FAIL();
     }
-    catch(std::string e) {
-        ASSERT_EQ(e,std::string("Already met the end !"));
+    catch(std::string e){
+        ASSERT_EQ(std::string("nulptr has no first()!"), e);
     }
+    delete it;
 }
 
-TEST_F(CaseNullIterator, CurrentItem) {
-    try {
-        nit->currentItem();
+TEST(CaseNullIterator, CurrentItem) {
+    Iterator* it = new NullIterator();
+    try{
+        it->currentItem();
+        FAIL();
     }
-    catch(std::string e) {
-        ASSERT_EQ(e,std::string("Already met the end !"));
+    catch(std::string e){
+        ASSERT_EQ(std::string("nulptr has no currentItem()!"), e);
     }
+    delete it;
 }
 
-TEST_F(CaseNullIterator, Next) {
-    try {
-        nit->next();
+TEST(CaseNullIterator, Next) {
+    Iterator* it = new NullIterator();
+    try{
+        it->next();
+        FAIL();
     }
-    catch(std::string e) {
-        ASSERT_EQ(e,std::string("Already met the end !"));
+    catch(std::string e){
+        ASSERT_EQ(std::string("nulptr has no next()!"), e);
     }
+    delete it;
 }
 
-TEST_F(CaseNullIterator, IsDone) {
-    ASSERT_TRUE(nit->isDone());
+TEST(CaseNullIterator, IsDone) {
+    Iterator* it = new NullIterator();
+    ASSERT_TRUE(it->isDone());
+    delete it;
 }
