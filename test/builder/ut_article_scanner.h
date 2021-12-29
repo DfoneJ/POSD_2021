@@ -22,6 +22,7 @@ TEST(CaseScanner, Text) {
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
+    delete scanner;
 }
 
 TEST(CaseScanner, List) {
@@ -46,6 +47,7 @@ TEST(CaseScanner, List) {
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
+    delete scanner;
 }
 
 TEST(CaseScanner, EmptyParagraph) {
@@ -73,6 +75,7 @@ TEST(CaseScanner, EmptyParagraph) {
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
+    delete scanner;
 }
 
 TEST(CaseScanner, SimpleParagraph) {
@@ -107,4 +110,5 @@ TEST(CaseScanner, SimpleParagraph) {
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
+    delete scanner;
 }

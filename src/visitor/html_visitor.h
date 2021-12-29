@@ -17,6 +17,7 @@ public:
             pit->currentItem()->accept(this);
             P_result += this->getResult();
         }
+        delete pit;
         _result = P_result;
     }
 
