@@ -26,7 +26,6 @@ TEST(CaseParagraph, CreatSevenLevel) {
 TEST(CaseParagraph, GetLevel){
     Paragraph p(1,"title_1");
     ASSERT_EQ(1,p.getLevel());
-    std::cout << str(p.getLevel()) << std::endl;
 }
 
 TEST(CaseParagraph, GetText){
