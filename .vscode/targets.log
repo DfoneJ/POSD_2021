@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Dec 29 21:41:01 2021
+# Make data base, printed on Wed Dec 29 21:59:42 2021
 
 # Variables
 
@@ -30,8 +30,7 @@ VSCODE_LOG_NATIVE = false
 # environment
 HOMEDRIVE = C:
 # automatic
-@ 
-F = $(notdir $@)
+@F = $(notdir $@)
 # automatic
 ^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
 # makefile
@@ -48,7 +47,8 @@ ONEDRIVE = C:\Users\JB\OneDrive
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
-# environment
+#  
+environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 TMP = C:\Users\JB\AppData\Local\Temp
@@ -59,7 +59,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-01115399-8678-4a70-b891-8d44dbffefc8-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-5432613f-531f-448b-bb88-19a684959779-sock
 # environment
 VSCODE_CWD = C:\Users\JB\Desktop\110_first\POSD\posd2021f_110598087_HW
 # makefile (from 'makefile', line 19)
@@ -85,7 +85,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_7560_UZWVPYTDENUPECRQ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8768_XBTALKFMGALHNGCF
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -205,7 +205,7 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 7560
+VSCODE_PID = 8768
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # variable set hash-table stats:
@@ -220,7 +220,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-NKVBO4M
 # : could not be stat'd.
 # C:\Users\JB\AppData\Local\Microsoft\WindowsApps (key C:/Users/JB/AppData/Local/Microsoft/WindowsApps, mtime 1639461367): 15 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1631090565): 31 files, no impossibilities.
-# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1640785132): 10 files, no impossibilities.
+# . (key c:/Users/JB/Desktop/110_first/POSD/posd2021f_110598087_HW, mtime 1640785468): 10 files, no impossibilities.
 # C:\Users\JB\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/JB/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1639913278): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1632901888): 8 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
@@ -247,7 +247,8 @@ src/builder/article_scanner.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
+# Not a 
+ target:
 src/iterator/null_iterator.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -265,8 +266,7 @@ all: directories ut_main
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# variable set hash-table stats: 
-
+# variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
 .PHONY: clean test
@@ -471,7 +471,8 @@ src/visitor/html_visitor.h:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=33/1024=3%, Rehash=0, Collisions=5/78=6%
+# Load=33/1024=3%, Reh 
+ash=0, Collisions=5/78=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -486,6 +487,6 @@ src/visitor/html_visitor.h:
 # strcache performance: lookups = 3460 / hit rate = 1%
 # hash-table stats:
 # Load=3398/8192=41%, Rehash=0, Collisions=1140/3460=33%
-# Finished Make data base on Wed Dec 29 21:41:02 2021
+# Finished Make data base on Wed Dec 29 21:59:42 2021
 
  

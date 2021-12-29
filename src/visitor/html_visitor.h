@@ -2,6 +2,7 @@
 
 #include "article_visitor.h"
 #include <string>
+#include <stdio.h>
 
 class HtmlVisitor : public ArticleVisitor {
 public:
@@ -11,13 +12,19 @@ public:
 
     void visitParagraph(Paragraph* p) override {
         std::string P_result="";
-        P_result = P_result + "<h>" + p->getText() + "</h>";
+        char headquote[10];
+        char endquote[10];
+        sprintf(headquote, "<h%d>", p->getLevel());
+        sprintf(endquote, "</h%d>", p->getLevel());
+        P_result += "<div>";
+        P_result = P_result + headquote + p->getText() + endquote;
         Iterator* pit = p->createIterator();
         for(pit->first(); !pit->isDone(); pit->next()) {
             pit->currentItem()->accept(this);
             P_result += this->getResult();
         }
         delete pit;
+        P_result += "</div>";
         _result = P_result;
     }
 
