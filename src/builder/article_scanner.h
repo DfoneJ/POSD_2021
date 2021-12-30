@@ -8,7 +8,10 @@
 
 class ArticleScanner {
 public:
-    ArticleScanner(std::string input) { _input = input; }
+    ArticleScanner(std::string input) {
+        _input = input;
+        skipWhiteSpace();
+    }
 
     std::string nextToken() {
         if(noTokens) throw std::string("Already met the end");
@@ -29,6 +32,7 @@ public:
             throw std::string("Already met the end");
         }
         pos = nearest_pos + result.length();
+        skipWhiteSpace();
         return result;
     } // OK
 
@@ -44,6 +48,7 @@ public:
             }
             else break;
         }
+        skipWhiteSpace();
         return std::stoi(result);
     } // OK
 
@@ -58,6 +63,7 @@ public:
         int endPos = pos;// back 1 pos of end quote
         std::string result ="";
         for(int i=startPos; i<endPos; i++) result += _input[i];
+        skipWhiteSpace();
         return result;
     } // OK
 
@@ -68,6 +74,13 @@ private:
     const std::vector<std::string> tokenList = {"ListItem", "Text", "Paragraph", "(", ")", "{", "}"};
     int pos = 0;
     bool noTokens = false;
+
+    void skipWhiteSpace() {
+        while(!isDone()) {
+            if(_input[pos]==' ' || _input[pos]=='\n') pos++;
+            else break;
+        }
+    }
 
     void skipNotNum() {
         if(!isDone()) {
