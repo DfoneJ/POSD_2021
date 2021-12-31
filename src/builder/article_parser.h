@@ -24,6 +24,7 @@ public:
         std::string token="";
         while(!_scanner->isDone()) {
             token = _scanner->nextToken();
+            // std::cout << token << std::endl;
             if(token == "ListItem") {
                 if(_scanner->nextToken() != "(") { throw std::string("Invalid input !"); }
                 std::string text = _scanner->nextStr();

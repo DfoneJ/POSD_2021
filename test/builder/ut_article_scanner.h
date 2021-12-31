@@ -79,7 +79,7 @@ TEST(CaseScanner, EmptyParagraph) {
 }
 
 TEST(CaseScanner, SimpleParagraph) {
-    std::string data_txt = std::string("Paragraph (1 \"This is a simple paragraph\") {\n    ListItem (\"This is a list item\")\n    Text (\"This is a text\")\n}");
+    std::string data_txt = std::string("Paragraph (1 \"This is a simple paragraph\") {\n    ListItem (\"This is a list item\")\n    Text (\"This is a text\")\n}  \n ");
     ArticleScanner* scanner = new ArticleScanner(data_txt);
     ASSERT_EQ("Paragraph", scanner->nextToken());
     ASSERT_EQ("(", scanner->nextToken());
@@ -95,18 +95,23 @@ TEST(CaseScanner, SimpleParagraph) {
     ASSERT_EQ("(", scanner->nextToken());
     ASSERT_EQ("This is a text", scanner->nextStr());
     ASSERT_EQ(")", scanner->nextToken());
+    ASSERT_EQ("}", scanner->nextToken());
+    ASSERT_TRUE(scanner->isDone());
     try {
         scanner->nextToken();
+        FAIL();
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
     try {
         scanner->nextInt();
+        FAIL();
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }
     try {
         scanner->nextStr();
+        FAIL();
     }catch (std::string e) {
         ASSERT_EQ("Already met the end", e);
     }

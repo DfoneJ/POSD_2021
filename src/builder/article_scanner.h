@@ -56,13 +56,14 @@ public:
         if(isDone()) throw std::string("Already met the end");
         findQuote(); // find head quote
         if(isDone()) throw std::string("Already met the end");
-        pos++;
-        int startPos = pos;// skip head quote of string
+        pos++; // skip head quote
+        int startPos = pos;
         findQuote(); // find end quote
         if(isDone()) throw std::string("Already met the end");
-        int endPos = pos;// back 1 pos of end quote
+        int endPos = pos;
         std::string result ="";
         for(int i=startPos; i<endPos; i++) result += _input[i];
+        pos++; // skip end quote
         skipWhiteSpace();
         return result;
     } // OK
@@ -76,10 +77,8 @@ private:
     bool noTokens = false;
 
     void skipWhiteSpace() {
-        while(!isDone()) {
-            if(_input[pos]==' ' || _input[pos]=='\n') pos++;
-            else break;
-        }
+        if(!isDone())
+        while(!isDone()&&!isDigit(_input[pos])&&!isToken(_input[pos])&&!isQuote(_input[pos])) pos++;
     }
 
     void skipNotNum() {
@@ -90,12 +89,22 @@ private:
 
     void findQuote() {
         if(!isDone()) {
-            while((_input[pos]!='\"')&&!isDone()) pos++;
+            while(!isQuote(_input[pos])&&!isDone()) pos++;
         }
     }
 
     bool isDigit(char c) {
         if(isDone()) return false;
         else return c>='0' && c<='9';
+    }
+
+    bool isToken(char c) {
+        if(isDone()) return false;
+        else return (c=='L' || c=='T' || c=='P' || c=='(' || c==')' || c=='{' || c=='}');
+    }
+
+    bool isQuote(char c) {
+        if(isDone()) return false;
+        else return (c=='\"');
     }
 };
